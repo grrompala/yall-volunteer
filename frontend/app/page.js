@@ -16,7 +16,7 @@ import {
   loadListings, tagCounts, tagSlug, cityCounts, orgCounts, orgSlugForListing, cityName,
 } from '../lib/listings'
 import {
-  summarize, formatDate, joinList, plural, itemListLd, faqLd, pageMeta, SITE_URL, SITE_NAME, METRO,
+  summarize, formatDate, plural, itemListLd, faqLd, pageMeta, SITE_URL, SITE_NAME, METRO,
 } from '../lib/seo'
 import { tagMeta } from '../components/tagMeta'
 import HomeClient from '../components/HomeClient'
@@ -63,13 +63,17 @@ export default function Home() {
 
   const heading = `Volunteer opportunities across ${METRO}`
   const refreshed = formatDate(s.newest)
-  const topCauses = s.topTags.slice(0, 4).map(t => tagMeta(t.tag).label.toLowerCase())
-  const intro =
-    `${s.total.toLocaleString()} open volunteer ${plural(s.total, 'role', 'roles')} from ${s.orgCount} ` +
-    `${plural(s.orgCount, 'organization')} across the Dallas metro, in one place. ` +
-    (topCauses.length ? `Biggest categories right now: ${joinList(topCauses)}. ` : '') +
-    (refreshed ? `Last refreshed ${refreshed}. ` : '') +
-    `Every listing links straight to the organization's own signup page.`
+
+  // Three independent facts, rendered as separate lines rather than one
+  // paragraph. A "biggest categories right now" sentence used to sit in here;
+  // it was filler — the cause links directly below list all of them with real
+  // counts, which is both more useful and more scannable.
+  const intro = [
+    `${s.total.toLocaleString()} open volunteer ${plural(s.total, 'role', 'roles')} from ` +
+      `${s.orgCount} ${plural(s.orgCount, 'organization')} across the Dallas metro, in one place.`,
+    `Every listing links straight to the organization's own signup page.`,
+    refreshed ? `Last refreshed ${refreshed}.` : '',
+  ].filter(Boolean)
 
   const faq = [
     {

@@ -8,8 +8,13 @@
 // No hooks and no browser APIs, so it renders identically in a server page or
 // inside the client app shell.
 
+// `intro` takes either a string (one paragraph) or an array of strings, which
+// renders each as its own spaced line. The array form is for the home page,
+// where the lead is a few independent facts rather than an argument — running
+// them together as one block made them harder to take in than they need to be.
 export default function PageIntro({ heading, intro, centered = false, className = '' }) {
-  if (!heading && !intro) return null
+  const lines = (Array.isArray(intro) ? intro : [intro]).filter(Boolean)
+  if (!heading && !lines.length) return null
 
   return (
     <div className={`${centered ? 'text-center mx-auto' : ''} max-w-3xl ${className}`}>
@@ -18,10 +23,10 @@ export default function PageIntro({ heading, intro, centered = false, className 
           {heading}
         </h1>
       )}
-      {intro && (
-        <p className="mt-3 text-base text-inkSoft leading-relaxed">
-          {intro}
-        </p>
+      {lines.length > 0 && (
+        <div className="mt-3 space-y-2 text-base text-inkSoft leading-relaxed">
+          {lines.map(line => <p key={line}>{line}</p>)}
+        </div>
       )}
     </div>
   )
