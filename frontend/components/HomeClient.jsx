@@ -1,7 +1,7 @@
 // HomeClient — the Good Deeds Dallas app experience, as a reusable client
 // component. Rendered by two kinds of routes:
 //
-//   /                     → <HomeClient />                          (empty state)
+//   /                     → <HomeClient heading intro faq>{browse HTML}</…>
 //   /volunteer/[tag]      → <HomeClient initialListings={…}
 //                             initialCauses={[tag]}
 //                             initialFocusedTab="listings" />       (pre-filtered)
@@ -13,6 +13,11 @@
 // content is in the static HTML (crawlers don't run JS). After hydration the
 // normal client fetch replaces it with the complete live dataset — same
 // interactive experience everywhere, no separate "browse pages".
+//
+// `heading`/`intro`/`faq` and `children` are the SEO surface: every route now
+// supplies an <h1>, a lead paragraph and an FAQ (generated in lib/seo.js), and
+// the home route additionally passes a server-rendered block of browse links
+// and recent listings as children. All of it is real HTML before hydration.
 //
 // 'use client' is required because we use React hooks.
 'use client'
@@ -28,7 +33,9 @@ import OrgModal            from './OrgModal'
 import ListingDetailModal  from './ListingDetailModal'
 import AdvancedSearchPanel from './AdvancedSearchPanel'
 import TagChip             from './TagChip'
-import { CONTACT_EMAIL } from './SourcesBlurb'
+import PageIntro           from './PageIntro'
+import FaqSection          from './FaqSection'
+import SiteFooter          from './SiteFooter'
 import { parseQuery, matchesQuery } from '../lib/search'
 import { buildOrgs } from './orgs'
 
@@ -70,6 +77,10 @@ export default function HomeClient({
   initialCities    = [],     // city filter to pre-apply in ListingsPanel
   initialFocusedTab = null,  // e.g. 'listings' to open focused on that section
   initialSearch    = '',     // pre-filled search query
+  heading          = null,   // the page's <h1> (see lib/seo.js)
+  intro            = null,   // lead paragraph rendered under the <h1>
+  faq              = null,   // [{ q, a }] rendered at the foot of the page
+  children         = null,   // extra server-rendered content (see app/page.js)
 }) {
   // On pre-filtered routes, render every server-provided row into the HTML
   // (crawlers can't trigger the infinite scroll). Interactive loading takes
@@ -211,6 +222,10 @@ export default function HomeClient({
   // search while on it (or on the true home screen, before any tab is
   // picked) should fall back to the combined "search everything" view below,
   // the same as it does from the home screen.
+  // Is this the bare home route, or one of the pre-filtered /volunteer pages?
+  // (Those always mount with a cause, a city, or a focused tab.)
+  const isHomeRoute = !initialFocusedTab && !initialCauses.length && !initialCities.length
+
   const showSearch = focusedTab === 'search' && !q
   // Stacked (combined, all-sections) search view applies from the general
   // tab — the true home screen, or the Smart Search tab once it has a typed
@@ -219,6 +234,14 @@ export default function HomeClient({
   // back out to every section.
   const isStacked  = !!q && (focusedTab === null || focusedTab === 'search')
   const isEmpty    = !q && !focusedTab
+
+  // The <h1>/intro/FAQ block. On a /volunteer page it's the page's own title
+  // and stays put — it's also the <h1> a crawler needs on every one of those
+  // URLs. On the home route it belongs to the welcome screen only: once you
+  // pick a tab or type a search you're looking at results, and a standing
+  // page title just pushes them down. Crawlers see the default state, so
+  // hiding it behind interaction costs nothing.
+  const showStandingCopy = !isHomeRoute || isEmpty
 
   return (
     <>
@@ -253,6 +276,17 @@ export default function HomeClient({
       />
 
       <main className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-10 py-8 lg:py-12">
+        {/* The page's <h1> and lead paragraph. `centered` on the home screen,
+            where it sits above the welcome copy rather than above a grid. */}
+        {heading && showStandingCopy && (
+          <PageIntro
+            heading={heading}
+            intro={intro}
+            centered={isEmpty}
+            className={isEmpty ? 'mb-2' : 'mb-8'}
+          />
+        )}
+
         {/* The empty state needs no data — render it immediately (it's also
             what puts the /volunteer chip links in the crawlable HTML). */}
         {isEmpty ? (
@@ -325,41 +359,17 @@ export default function HomeClient({
             )}
           </>
         )}
+
+        {/* Server-rendered content passed in by the route (browse links,
+            recently-added listings, org links). Kept out of the way once the
+            visitor is actively searching or has focused a tab — but always in
+            the HTML a crawler sees, which is the default state. */}
+        {children && isEmpty && <div className="mt-14">{children}</div>}
+
+        {showStandingCopy && <FaqSection faq={faq} />}
       </main>
 
-      <footer className="border-t border-line bg-white mt-8">
-        <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-10 py-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-          <button onClick={goHome} className="flex flex-wrap items-center gap-3 hover:opacity-80 transition-opacity">
-            <span className="font-display font-extrabold text-ink text-lg">
-              Good Deeds <span className="text-brand">Dallas</span>
-            </span>
-            <span className="text-xs font-mono text-muted uppercase tracking-wider">
-
-            </span>
-          </button>
-          <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 text-sm text-muted">
-            <a href="/privacy" className="hover:text-brand transition-colors">
-              Privacy Policy
-            </a>
-            <a
-              href={`mailto:${CONTACT_EMAIL}`}
-              className="hover:text-brand transition-colors"
-            >
-              {CONTACT_EMAIL}
-            </a>
-            {lastUpdated && (
-              <span>
-                Last updated{' '}
-                {new Date(lastUpdated).toLocaleDateString('en-US', {
-                  month: 'short',
-                  day: 'numeric',
-                  year: 'numeric',
-                })}
-              </span>
-            )}
-          </div>
-        </div>
-      </footer>
+      <SiteFooter onHome={goHome} lastUpdated={lastUpdated} />
 
       {/* Org summary + full-listing modals (overlay the whole page) */}
       <OrgModal
@@ -397,16 +407,10 @@ function EmptyHomeState({ onOpenSearch }) {
   return (
     <div className="py-3 lg:py-5 text-center max-w-2xl mx-auto">
       {/* Intro, center-aligned within the max-w-2xl column (matching the chips
-          below). Both lines lead with an icon so they align: a wave on the
-          greeting, a magnifying glass on the search prompt. */}
+          below). The greeting line that used to sit here said the same thing as
+          the <h1> and lead paragraph now directly above it, so only the search
+          prompt remains. */}
       <div className="space-y-3 text-center text-base sm:text-lg text-inkSoft leading-relaxed">
-        <div className="flex items-start justify-center gap-2.5">
-          <span aria-hidden className="mt-0.5 text-xl leading-none shrink-0">👋</span>
-          <span>
-            Howdy! This is a directory for finding volunteer opportunities
-            across the Dallas-Fort Worth metroplex.
-          </span>
-        </div>
         <div className="flex items-start justify-center gap-2.5">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden className="mt-1 h-5 w-5 shrink-0 text-brand">
             <circle cx="11" cy="11" r="7" />

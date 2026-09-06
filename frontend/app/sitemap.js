@@ -1,9 +1,11 @@
 // sitemap.js — served at /sitemap.xml.
-// Home + the crawlable /volunteer browse pages (per-cause and per-city).
+// Home + the crawlable /volunteer browse pages (per-cause, per-city, per-org).
 // Regenerates on every deploy, so the weekly data-refresh commit keeps
 // lastModified and the page list current automatically.
 
-import { loadListings, tagCounts, tagSlug, cityCounts } from '../lib/listings'
+import {
+  loadListings, tagCounts, tagSlug, cityCounts, orgCounts,
+} from '../lib/listings'
 
 const SITE_URL = 'https://www.good-deeds-dallas.org'
 
@@ -17,6 +19,7 @@ export default function sitemap() {
   return [
     { url: SITE_URL, lastModified, changeFrequency: 'weekly', priority: 1 },
     { url: `${SITE_URL}/volunteer`, lastModified, changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${SITE_URL}/about`, lastModified, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${SITE_URL}/privacy`, changeFrequency: 'yearly', priority: 0.2 },
     ...tagCounts().map(({ tag }) => ({
       url: `${SITE_URL}/volunteer/${tagSlug(tag)}`,
@@ -29,6 +32,21 @@ export default function sitemap() {
       lastModified,
       changeFrequency: 'weekly',
       priority: 0.8,
+    })),
+    {
+      url: `${SITE_URL}/volunteer/organizations`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    // One page per organization above the listing threshold — the bulk of the
+    // sitemap, and the pages most likely to earn a link back from the nonprofit
+    // they describe.
+    ...orgCounts().map(({ slug }) => ({
+      url: `${SITE_URL}/volunteer/org/${slug}`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 0.6,
     })),
   ]
 }

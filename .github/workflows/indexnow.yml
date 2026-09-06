@@ -1,0 +1,37 @@
+name: Submit sitemap to IndexNow
+
+# Pings IndexNow with every URL in the live sitemap so Bing re-crawls the
+# changed pages within hours. That matters beyond Bing itself: Bing's index
+# feeds parts of Copilot and ChatGPT search, and the site adds and retires
+# listing pages every week.
+#
+# Google doesn't participate in IndexNow — Search Console's sitemap submission
+# covers that side and needs no automation here.
+#
+# Runs ~4h after the Monday data refresh (refresh.yml, 09:23 UTC) so Vercel has
+# finished redeploying and the live sitemap reflects the new data. Reading the
+# deployed sitemap rather than generating a list locally means we can never
+# submit a URL that isn't actually live.
+
+on:
+  schedule:
+    - cron: '45 13 * * 1'
+  workflow_dispatch: {}
+
+concurrency:
+  group: indexnow
+  cancel-in-progress: false
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # Standard library only — no pip install needed.
+      - name: Submit URLs
+        run: python submit_indexnow.py

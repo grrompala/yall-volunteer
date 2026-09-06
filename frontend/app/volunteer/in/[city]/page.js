@@ -3,9 +3,13 @@
 // into the HTML for crawlers; humans land on the interactive app focused on
 // Opportunities with that city's filter pill active.
 // Only cities with enough listings get a page (CITY_PAGE_MIN in lib/listings).
+//
+// Heading, lead paragraph, FAQ, title and meta description all come from
+// cityPageCopy() in lib/seo.js — see the note on the cause route.
 
 import { notFound } from 'next/navigation'
 import { listingsByCitySlug, cityCounts, lightenListing } from '../../../../lib/listings'
+import { cityPageCopy, itemListLd, faqLd, breadcrumbLd, pageMeta } from '../../../../lib/seo'
 import HomeClient from '../../../../components/HomeClient'
 
 // How many listings to bake into the static HTML. Enough for topical
@@ -26,16 +30,8 @@ function cityForSlug(slug) {
 export function generateMetadata({ params }) {
   const entry = cityForSlug(params.city)
   if (!entry) return {}
-  const title = `Volunteer opportunities in ${entry.city}, TX`
-  const description =
-    `${entry.count} current volunteer opportunities in ${entry.city}, Texas, ` +
-    `updated weekly. Every listing links to the organization's own signup page.`
-  return {
-    title,
-    description,
-    alternates: { canonical: `/volunteer/in/${params.city}` },
-    openGraph: { title, description, url: `/volunteer/in/${params.city}` },
-  }
+  const { title, description } = cityPageCopy(entry.city, listingsByCitySlug(params.city))
+  return pageMeta({ title, description, path: `/volunteer/in/${params.city}` })
 }
 
 export default function CityPage({ params }) {
@@ -44,19 +40,19 @@ export default function CityPage({ params }) {
 
   const listings = listingsByCitySlug(params.city)
     .sort((a, b) => (b.last_scraped || '').localeCompare(a.last_scraped || ''))
+  const copy = cityPageCopy(entry.city, listings)
 
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'ItemList',
-    name: `Volunteer opportunities in ${entry.city}, TX`,
-    numberOfItems: listings.length,
-    itemListElement: listings.slice(0, 50).map((o, i) => ({
-      '@type': 'ListItem',
-      position: i + 1,
-      name: o.opportunity_title,
-      url: o.source_url,
-    })),
-  }
+  const trail = [
+    { name: 'Home', path: '/' },
+    { name: 'Volunteer', path: '/volunteer' },
+    { name: entry.city, path: `/volunteer/in/${params.city}` },
+  ]
+
+  const jsonLd = [
+    itemListLd(copy.title, listings, 50),
+    faqLd(copy.faq),
+    breadcrumbLd(trail),
+  ]
 
   return (
     <>
@@ -68,6 +64,9 @@ export default function CityPage({ params }) {
         initialListings={listings.slice(0, SSR_CAP).map(lightenListing)}
         initialCities={[entry.city]}
         initialFocusedTab="listings"
+        heading={copy.h1}
+        intro={copy.intro}
+        faq={copy.faq}
       />
     </>
   )
