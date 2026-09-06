@@ -83,10 +83,23 @@ def submit(urls: list[str], dry_run: bool) -> bool:
             print(f"  submitted {len(urls)} URL(s) -> HTTP {resp.status}")
             return True
     except urllib.error.HTTPError as exc:
-        # 422 usually means the key check failed; 429 means slow down. Neither
-        # should fail the weekly pipeline, so report and carry on.
+        body = exc.read().decode("utf-8", "replace")
         print(f"  submission failed: HTTP {exc.code} {exc.reason}")
-        print(f"  {exc.read().decode('utf-8', 'replace')[:300]}")
+        print(f"  {body[:300]}")
+
+        # Right after the key file first goes live, IndexNow returns 403
+        # SiteVerificationNotCompleted until it has fetched and checked it.
+        # That's a normal waiting state, not a misconfiguration, and it clears
+        # itself — failing the job for it would put a red X on the weekly run
+        # for something nobody needs to act on, which is how real alerts get
+        # ignored. Surface it as a warning and let the next run pick it up.
+        if "SiteVerificationNotCompleted" in body:
+            print("::warning::IndexNow has not finished verifying the key file yet — "
+                  "no URLs were submitted. This normally clears within a day; the next "
+                  "run will retry. If it persists for more than a few days, check that "
+                  f"{KEY_LOCATION} is reachable and returns exactly the key.")
+            return True
+
         return False
     except urllib.error.URLError as exc:
         print(f"  submission failed: {exc}")
