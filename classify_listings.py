@@ -65,7 +65,16 @@ You are tagging a volunteer opportunity with categories from a fixed taxonomy.
 Pick the 1-4 most relevant tags from this exact list (use the strings verbatim):
 {taxonomy}
 
-If none clearly apply, return an empty array. Do not invent new tags.
+Always return at least one tag. Descriptions are often one short line — infer
+from the setting and the work, don't hold out for an explicit statement:
+  - anything in a hospital, clinic, or hospice -> health
+  - sorting/packing/serving food, pantries, meal delivery -> food_security
+  - shelters, fostering, transport to a vet, adoption events -> animals
+  - tutoring, mentoring, literacy, after-school -> education
+  - general help, admin, events, greeting, sorting donations, and anything
+    that fits nowhere more specific -> community
+
+Do not invent tags outside the list.
 
 Return ONLY a JSON array of strings, no explanation, no markdown.
 
@@ -73,6 +82,11 @@ Title: {title}
 Organization: {org}
 Description: {description}
 """
+
+# Assigned when the model returns nothing usable for a record that does have
+# text. An untagged listing is invisible on every cause page and in every cause
+# filter — the catch-all is strictly better than dropping it out of the site.
+FALLBACK_TAGS = ["community"]
 
 
 # ── LLM plumbing (mirrors fetch_curated.py) ──────────────────────────────────
@@ -119,27 +133,12 @@ def call_llm(prompt: str, client, provider: str) -> str:
         return resp.choices[0].message.content.strip()
 
 
-def classify(record: dict, client, provider: str) -> list[str]:
-    """Return a list of tags from TAXONOMY for one record."""
-    title       = record.get("opportunity_title") or ""
-    org         = record.get("org_name") or ""
-    description = record.get("description_short") or record.get("description_long") or ""
-    description = description[:1500]   # cap to keep cost predictable
-
-    if not title and not description:
-        return []
-
-    prompt = CLASSIFY_PROMPT.format(
-        taxonomy=json.dumps(TAXONOMY),
-        title=title,
-        org=org,
-        description=description,
-    )
-    raw = call_llm(prompt, client, provider)
-
+def parse_tags(raw: str) -> list[str]:
+    """Model output -> validated tag list. Returns [] if nothing usable."""
     # Strip markdown fences if model added them
     if raw.startswith("```"):
-        raw = raw.split("```")[1]
+        parts = raw.split("```")
+        raw = parts[1] if len(parts) > 1 else raw
         if raw.startswith("json"):
             raw = raw[4:]
     raw = raw.strip()
@@ -151,8 +150,59 @@ def classify(record: dict, client, provider: str) -> list[str]:
         return []
     if not isinstance(tags, list):
         return []
-    # Drop anything not in the taxonomy
-    return [t for t in tags if isinstance(t, str) and t in TAXONOMY]
+    # Drop anything not in the taxonomy, and de-duplicate while keeping order
+    seen = set()
+    out = []
+    for t in tags:
+        if isinstance(t, str) and t in TAXONOMY and t not in seen:
+            seen.add(t)
+            out.append(t)
+    return out
+
+
+def classify(record: dict, client, provider: str) -> list[str]:
+    """Return a list of tags from TAXONOMY for one record.
+
+    Never returns [] for a record that has text. A record with no unified_tags
+    appears on no cause page and matches no cause filter, so it's effectively
+    invisible on the site — and because the caller re-attempts every record with
+    empty tags, an untagged record is also re-billed to the LLM on every weekly
+    run. Both failure modes were silent; roughly a quarter of the corpus had
+    accumulated in that state.
+    """
+    title       = record.get("opportunity_title") or ""
+    org         = record.get("org_name") or ""
+    description = record.get("description_short") or record.get("description_long") or ""
+    description = description[:1500]   # cap to keep cost predictable
+
+    if not title and not description:
+        return []   # genuinely nothing to go on
+
+    prompt = CLASSIFY_PROMPT.format(
+        taxonomy=json.dumps(TAXONOMY),
+        title=title,
+        org=org,
+        description=description,
+    )
+
+    # One retry: a transient API error or a malformed reply shouldn't be the
+    # difference between a listing being findable and not.
+    for attempt in (1, 2):
+        try:
+            tags = parse_tags(call_llm(prompt, client, provider))
+        except Exception as exc:                      # noqa: BLE001 - report and retry
+            print(f"    LLM error (attempt {attempt}): {type(exc).__name__}: {exc}")
+            tags = []
+            if attempt == 1:
+                time.sleep(2.0)
+                continue
+        if tags:
+            return tags
+        if attempt == 1:
+            time.sleep(DELAY)
+
+    print(f"    No tags returned — falling back to {FALLBACK_TAGS}")
+    return list(FALLBACK_TAGS)
 
 
 # ── Main ─────────────────────────────────────────────────────────────────────
@@ -168,15 +218,23 @@ def process_file(path: Path, client, provider: str, reclassify: bool):
     todo = [r for r in records if reclassify or not r.get("unified_tags")]
     print(f"  {len(records)} records · {len(todo)} need tagging")
 
+    still_empty = 0
     for i, rec in enumerate(todo, 1):
         title = rec.get("opportunity_title") or rec.get("id")
         tags = classify(rec, client, provider)
         rec["unified_tags"] = tags
+        if not tags:
+            still_empty += 1
         print(f"    [{i}/{len(todo)}] {title[:60]}: {tags}")
         time.sleep(DELAY)
 
     with open(path, "w", encoding="utf-8") as f:
         json.dump(records, f, indent=2, ensure_ascii=False)
+
+    # Anything still empty is a record with no title and no description at all.
+    # A handful is normal; a spike means a scraper is producing junk records.
+    if still_empty:
+        print(f"  WARNING: {still_empty} record(s) left untagged (no title or description)")
     print(f"  Saved {path}\n")
 
 

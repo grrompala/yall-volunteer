@@ -2,31 +2,54 @@
 // per-cause and per-city pages: real HTML with real links, no JS required.
 
 import Link from 'next/link'
-import { loadListings, tagCounts, tagSlug, cityCounts } from '../../lib/listings'
+import { loadListings, tagCounts, tagSlug, cityCounts, orgCounts } from '../../lib/listings'
 import { tagMeta } from '../../components/tagMeta'
+import { breadcrumbLd, formatDate, lastRefreshed, pageMeta, SITE_URL } from '../../lib/seo'
+import Breadcrumbs from '../../components/Breadcrumbs'
+import SiteFooter from '../../components/SiteFooter'
 
-export const metadata = {
+export const metadata = pageMeta({
   title: 'Browse volunteer opportunities in Dallas–Fort Worth',
   description:
-    'Volunteer opportunities across the Dallas metro, organized by cause and city. ' +
+    'Volunteer opportunities across the Dallas metro, organized by cause, city and organization. ' +
     'Updated weekly from local volunteer portals and nonprofits.',
-  alternates: { canonical: '/volunteer' },
-}
+  path: '/volunteer',
+})
+
+const trail = [
+  { name: 'Home', path: '/' },
+  { name: 'Volunteer', path: '/volunteer' },
+]
 
 export default function VolunteerIndex() {
-  const total = loadListings().length
+  const listings = loadListings()
+  const total = listings.length
   const tags = tagCounts()
   const cities = cityCounts()
+  const orgs = orgCounts()
+  const refreshed = formatDate(lastRefreshed(listings))
+
+  const jsonLd = [
+    breadcrumbLd(trail),
+    {
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      name: 'Browse volunteer opportunities in Dallas–Fort Worth',
+      url: `${SITE_URL}/volunteer`,
+      isPartOf: { '@id': `${SITE_URL}/#website` },
+    },
+  ]
 
   return (
+    <>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
     <main className="max-w-4xl mx-auto px-5 sm:px-6 lg:px-10 py-10 lg:py-14">
-      <p className="text-sm">
-        <Link href="/" className="text-brand font-semibold hover:text-brandDark">
-          ← Good Deeds Dallas home
-        </Link>
-      </p>
+      <Breadcrumbs trail={trail} />
 
-      <h1 className="mt-4 font-display font-extrabold text-3xl sm:text-4xl text-ink">
+      <h1 className="mt-5 font-display font-extrabold text-3xl sm:text-4xl text-ink">
         Browse volunteer opportunities in Dallas–Fort Worth
       </h1>
       <p className="mt-3 text-base text-inkSoft leading-relaxed max-w-2xl">
@@ -34,6 +57,7 @@ export default function VolunteerIndex() {
         gathered weekly from local volunteer portals and nonprofits. Pick a cause
         or a city, and every listing links to the original posting where you
         sign up directly with the organization.
+        {refreshed && ` Last refreshed ${refreshed}.`}
       </p>
 
       <h2 className="mt-10 font-bold text-xl text-ink">By cause</h2>
@@ -70,10 +94,39 @@ export default function VolunteerIndex() {
         ))}
       </ul>
 
+      <h2 className="mt-10 font-bold text-xl text-ink">By organization</h2>
+      <p className="mt-3 text-base text-inkSoft leading-relaxed max-w-2xl">
+        {orgs.length} nonprofits have three or more open roles and get their own page collecting
+        everything they&apos;re recruiting for —{' '}
+        <Link href="/volunteer/organizations" className="text-brand font-semibold hover:text-brandDark">
+          browse all {orgs.length}
+        </Link>
+        .
+      </p>
+      <ul className="mt-4 flex flex-wrap gap-2">
+        {orgs.slice(0, 24).map(({ slug, name, count }) => (
+          <li key={slug}>
+            <Link
+              href={`/volunteer/org/${slug}`}
+              className="inline-flex items-center gap-1.5 rounded-full border border-line bg-white px-3.5 py-1.5 text-sm font-medium text-inkSoft hover:border-brand hover:text-brand transition-colors"
+            >
+              {name}
+              <span className="font-mono text-xs text-muted">{count}</span>
+            </Link>
+          </li>
+        ))}
+      </ul>
+
       <p className="mt-12 text-sm text-muted leading-relaxed max-w-2xl">
         Prefer searching? The <Link href="/" className="text-brand font-semibold hover:text-brandDark">interactive
-        home page</Link> has keyword search, filters, and an AI-powered Smart Search.
+        home page</Link> has keyword search, filters, and an AI-powered Smart Search. Or read{' '}
+        <Link href="/about" className="text-brand font-semibold hover:text-brandDark">
+          how this index is built
+        </Link>
+        .
       </p>
     </main>
+    <SiteFooter />
+    </>
   )
 }
