@@ -42,8 +42,8 @@ export function generateMetadata() {
   const orgs = new Set(listings.map(o => o.org_name).filter(Boolean)).size
   const description =
     `${total.toLocaleString()} volunteer opportunities across Dallas–Fort Worth from ${orgs} local ` +
-    `nonprofits, refreshed weekly and quality-checked. Browse by cause or city, then sign up directly ` +
-    `with the organization.`
+    `nonprofits, refreshed weekly and quality-checked. Browse by cause, city or organization, then sign ` +
+    `up through the original posting.`
 
   return pageMeta({
     title: `${SITE_NAME} — Volunteer opportunities across DFW`,
@@ -64,14 +64,14 @@ export default function Home() {
   const heading = `Volunteer opportunities across ${METRO}`
   const refreshed = formatDate(s.newest)
 
-  // Three independent facts, rendered as separate lines rather than one
-  // paragraph. A "biggest categories right now" sentence used to sit in here;
-  // it was filler — the cause links directly below list all of them with real
-  // counts, which is both more useful and more scannable.
+  // Two facts, on separate lines. Deliberately short: a "biggest categories"
+  // sentence and a "links straight to the organization's own signup page" line
+  // used to sit here. The first was filler (the cause links below list all of
+  // them with real counts) and the second wasn't true — plenty of listings link
+  // to Idealist or Voly rather than the nonprofit's own site.
   const intro = [
     `${s.total.toLocaleString()} open volunteer ${plural(s.total, 'role', 'roles')} from ` +
-      `${s.orgCount} ${plural(s.orgCount, 'organization')} across the Dallas metro, in one place.`,
-    `Every listing links straight to the organization's own signup page.`,
+      `${s.orgCount} ${plural(s.orgCount, 'organization')} across the Dallas metro.`,
     refreshed ? `Last refreshed ${refreshed}.` : '',
   ].filter(Boolean)
 
@@ -83,7 +83,7 @@ export default function Home() {
         `organizations across ${METRO}. Browse by cause (food security, animals, seniors, and ` +
         `${tags.length - 3} more) or ` +
         `by city, search by keyword, or describe what you're after in Smart Search. Each result links to the ` +
-        `nonprofit's own signup page.`,
+        `original posting, where you sign up.`,
     },
     {
       q: 'Is Good Deeds Dallas free?',

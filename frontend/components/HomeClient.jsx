@@ -283,6 +283,7 @@ export default function HomeClient({
             heading={heading}
             intro={intro}
             centered={isEmpty}
+            size={isEmpty ? 'lg' : 'base'}
             className={isEmpty ? 'mb-2' : 'mb-8'}
           />
         )}

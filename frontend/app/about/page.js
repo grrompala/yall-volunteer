@@ -77,7 +77,8 @@ export default function AboutPage() {
     {
       q: 'Does Good Deeds Dallas handle signups?',
       a:
-        `No. Every listing links to the organization's own page and registration happens there. The site never ` +
+        `No. Every listing links back to where it was posted — the organization's own site, or the portal it ` +
+        `posted to — and registration happens there. The site never ` +
         `sits between a volunteer and a nonprofit, takes no cut, and collects nothing from you to browse.`,
     },
   ]

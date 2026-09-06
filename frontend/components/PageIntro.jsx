@@ -12,7 +12,19 @@
 // renders each as its own spaced line. The array form is for the home page,
 // where the lead is a few independent facts rather than an argument — running
 // them together as one block made them harder to take in than they need to be.
-export default function PageIntro({ heading, intro, centered = false, className = '' }) {
+// `size` matches the lead to the copy it sits next to. On the home screen the
+// welcome line below ("Type a cause, town, or nonprofit…") is text-base sm:lg,
+// so a text-base lead directly above it read as two different typefaces
+// stacked; 'lg' lines them up. The browse pages keep 'base', where the lead is
+// a full paragraph above a results grid rather than one line above another.
+const SIZES = {
+  base: 'text-base',
+  lg: 'text-base sm:text-lg',
+}
+
+export default function PageIntro({
+  heading, intro, centered = false, size = 'base', className = '',
+}) {
   const lines = (Array.isArray(intro) ? intro : [intro]).filter(Boolean)
   if (!heading && !lines.length) return null
 
@@ -24,7 +36,7 @@ export default function PageIntro({ heading, intro, centered = false, className 
         </h1>
       )}
       {lines.length > 0 && (
-        <div className="mt-3 space-y-2 text-base text-inkSoft leading-relaxed">
+        <div className={`mt-3 space-y-2 ${SIZES[size] || SIZES.base} text-inkSoft leading-relaxed`}>
           {lines.map(line => <p key={line}>{line}</p>)}
         </div>
       )}

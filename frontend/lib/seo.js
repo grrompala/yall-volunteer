@@ -158,7 +158,7 @@ export function tagPageCopy(tag, listings) {
   const title = `${label} volunteer opportunities in ${METRO}`
   const description =
     `${s.total} current ${lower} volunteer ${plural(s.total, 'opportunity', 'opportunities')} across ` +
-    `the Dallas metro, updated weekly. Every listing links to the organization's own signup page.`
+    `the Dallas metro, updated weekly. Every listing links back to the original posting, where you sign up.`
 
   const cities = s.topCities.slice(0, 5).map(c => c.city)
   const intro = [
@@ -169,7 +169,7 @@ export function tagPageCopy(tag, listings) {
       ? `Most are in ${joinList(cities)}${s.topCities.length > 5 ? ', and elsewhere in the metro' : ''}.`
       : '',
     refreshed
-      ? `The list was last refreshed on ${refreshed}; past-dated events are pruned daily, and every listing links straight to the organization's own signup page — Good Deeds Dallas never sits between you and the nonprofit.`
+      ? `Last refreshed ${refreshed}. Past-dated events are removed daily, and every listing links back to where it was posted — the organization's own site, or the portal it posted to.`
       : '',
   ].filter(Boolean).join(' ')
 
@@ -186,10 +186,10 @@ export function tagPageCopy(tag, listings) {
     {
       q: `Do I need to sign up in advance to volunteer?`,
       a:
-        `Almost always, yes. Every listing here links to the organization's own signup page, where you'll ` +
-        `complete their registration — some ask for an orientation or a background check first, especially ` +
-        `roles working with children or in healthcare settings. Good Deeds Dallas doesn't take signups itself; ` +
-        `it points you at the source.`,
+        `Almost always, yes. Every listing links back to where it was posted — the organization's own site, or a ` +
+        `portal like Idealist or Voly — and you register there. Some roles ask for an orientation or a ` +
+        `background check first, especially those working with children or in healthcare settings. Good Deeds ` +
+        `Dallas doesn't take signups itself; it points you at the source.`,
     },
     {
       q: `How current are these ${lower} listings?`,
@@ -212,7 +212,7 @@ export function cityPageCopy(city, listings) {
   const title = `Volunteer opportunities in ${city}, TX`
   const description =
     `${s.total} current volunteer ${plural(s.total, 'opportunity', 'opportunities')} in ${city}, Texas, ` +
-    `updated weekly. Every listing links to the organization's own signup page.`
+    `updated weekly. Every listing links back to the original posting, where you sign up.`
 
   const causes = s.topTags.slice(0, 5).map(t => tagMeta(t.tag).label.toLowerCase())
   const intro = [
@@ -221,7 +221,7 @@ export function cityPageCopy(city, listings) {
       `${plural(s.orgCount, 'organization')} and ${sourceSentence(s.sources)}.`,
     causes.length ? `The most common causes here are ${joinList(causes)}.` : '',
     refreshed
-      ? `Last refreshed ${refreshed}. Every listing links straight to the organization's own signup page.`
+      ? `Last refreshed ${refreshed}. Every listing links back to where it was posted, which is where you sign up.`
       : '',
   ].filter(Boolean).join(' ')
 
@@ -277,7 +277,7 @@ export function orgPageCopy(org) {
       ? `Their work covers ${joinList(causes)}.`
       : '',
     `Listings ${sourceSentence(s.sources)}${refreshed ? ` and last checked ${refreshed}` : ''}. ` +
-      `Sign-ups go directly through ${org.name} — use the link on any listing below.`,
+      `Signing up happens at the source — use the link on any listing below.`,
   ].filter(Boolean).join(' ')
 
   const faq = [
@@ -285,8 +285,8 @@ export function orgPageCopy(org) {
       q: `How do I volunteer with ${org.name}?`,
       a:
         `${org.name} has ${s.total} open volunteer ${plural(s.total, 'role', 'roles')} listed. Pick the one you ` +
-        `want below and follow its link to ${org.name}'s own signup page — Good Deeds Dallas indexes the ` +
-        `openings but doesn't handle registration.`,
+        `want below and follow its link back to the original posting to register — Good Deeds Dallas indexes the ` +
+        `openings but doesn't handle signups itself.`,
     },
     {
       q: `Where is ${org.name} located?`,
