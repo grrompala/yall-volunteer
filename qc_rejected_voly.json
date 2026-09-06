@@ -24,6 +24,14 @@
     "source_url": "https://dallas.voly.org/opportunity/view.html?id=118681"
   },
   {
+    "id": "voly_118813",
+    "org_name": "Helping Hands Open Hearts",
+    "opportunity_title": "Community Service Saturday",
+    "category": "expired",
+    "reason": "event date passed (2026-08-29)",
+    "source_url": "https://dallas.voly.org/opportunity/view.html?id=118813"
+  },
+  {
     "id": "voly_118206",
     "org_name": "Child Poverty Action Lab",
     "opportunity_title": "For Oak Cliff Back to School Festival",
@@ -48,6 +56,14 @@
     "source_url": "https://dallas.voly.org/opportunity/view.html?id=118749"
   },
   {
+    "id": "voly_118764",
+    "org_name": "Spay Neuter Network Kaufman",
+    "opportunity_title": "Low-Cost Vaccine Clinic - Ft. Worth North Animal Care",
+    "category": "expired",
+    "reason": "event date passed (2026-08-29)",
+    "source_url": "https://dallas.voly.org/opportunity/view.html?id=118764"
+  },
+  {
     "id": "voly_118748",
     "org_name": "Spay Neuter Network Kaufman",
     "opportunity_title": "Low-Cost Vaccine Clinic - Garland Animal Shelter-Saturday, August 1st, 2026, 8am - 11am",
@@ -62,6 +78,22 @@
     "category": "expired",
     "reason": "event date passed (2026-07-25)",
     "source_url": "https://dallas.voly.org/opportunity/view.html?id=118653"
+  },
+  {
+    "id": "voly_120132",
+    "org_name": "Spay Neuter Network Kaufman",
+    "opportunity_title": "Low-Cost Vaccine Clinic - West Dallas Multipurpose Center (WDMC) - Saturday, September 5th, 9am - 12p",
+    "category": "expired",
+    "reason": "event date passed (2026-09-05)",
+    "source_url": "https://dallas.voly.org/opportunity/view.html?id=120132"
+  },
+  {
+    "id": "voly_118760",
+    "org_name": "Spay Neuter Network Kaufman",
+    "opportunity_title": "Low-Cost Vaccine Clinic - West Dallas Multipurpose Center (WDMC) - Wednesday, August 22, 2026 - 8am - 11am",
+    "category": "expired",
+    "reason": "event date passed (2026-08-22)",
+    "source_url": "https://dallas.voly.org/opportunity/view.html?id=118760"
   },
   {
     "id": "voly_118651",
@@ -102,6 +134,14 @@
     "category": "duplicate",
     "reason": "duplicate of voly_118511 — same org/title/description, no distinguishing schedule",
     "source_url": "https://dallas.voly.org/opportunity/view.html?id=118844"
+  },
+  {
+    "id": "voly_119723",
+    "org_name": "Resource Center",
+    "opportunity_title": "Make a Difference in the Lives of Others",
+    "category": "duplicate",
+    "reason": "duplicate of voly_118511 — same org/title/description, no distinguishing schedule",
+    "source_url": "https://dallas.voly.org/opportunity/view.html?id=119723"
   },
   {
     "id": "voly_117110",
@@ -184,6 +224,22 @@
     "source_url": "https://dallas.voly.org/opportunity/view.html?id=116850"
   },
   {
+    "id": "voly_118814",
+    "org_name": "Helping Hands Open Hearts",
+    "opportunity_title": "Thankful Thursday Service",
+    "category": "expired",
+    "reason": "event date passed (2026-08-20)",
+    "source_url": "https://dallas.voly.org/opportunity/view.html?id=118814"
+  },
+  {
+    "id": "voly_118815",
+    "org_name": "Helping Hands Open Hearts",
+    "opportunity_title": "Thankful Thursday Service *EARLY EDITION*",
+    "category": "expired",
+    "reason": "event date passed (2026-09-03)",
+    "source_url": "https://dallas.voly.org/opportunity/view.html?id=118815"
+  },
+  {
     "id": "voly_118853",
     "org_name": "To You From Us",
     "opportunity_title": "To You From Us 6th Annual Back 2 School Bash",
@@ -208,6 +264,14 @@
     "source_url": "https://dallas.voly.org/opportunity/view.html?id=118821"
   },
   {
+    "id": "voly_118826",
+    "org_name": "Violas House Dallas",
+    "opportunity_title": "Viola’s House Grand Prairie Diaper Giveaway",
+    "category": "expired",
+    "reason": "event date passed (2026-08-25)",
+    "source_url": "https://dallas.voly.org/opportunity/view.html?id=118826"
+  },
+  {
     "id": "voly_115689",
     "org_name": "Angel Hands Hospice",
     "opportunity_title": "Volunteer Companion with Hospice Patient(s)",
@@ -230,5 +294,13 @@
     "category": "expired",
     "reason": "event date passed (2026-07-19)",
     "source_url": "https://dallas.voly.org/opportunity/view.html?id=114961"
+  },
+  {
+    "id": "voly_114962",
+    "org_name": "Gift of Love",
+    "opportunity_title": "food pantry",
+    "category": "expired",
+    "reason": "event date passed (2026-08-16)",
+    "source_url": "https://dallas.voly.org/opportunity/view.html?id=114962"
   }
 ]

@@ -1529,7 +1529,15 @@
     },
     "unified_tags": [
       "animals"
-    ]
+    ],
+    "geo": {
+      "city": "Balch Springs",
+      "state": "TX",
+      "lat": 32.72874,
+      "lng": -96.62277,
+      "precision": "city",
+      "resolved_from": "location.city"
+    }
   },
   {
     "id": "balch_springs_animal_shelter_balch_springs_1",
@@ -1579,7 +1587,15 @@
       "animals",
       "education",
       "community"
-    ]
+    ],
+    "geo": {
+      "city": "Balch Springs",
+      "state": "TX",
+      "lat": 32.72874,
+      "lng": -96.62277,
+      "precision": "city",
+      "resolved_from": "location.city"
+    }
   },
   {
     "id": "baylor_scott_white_medical_center_irving_irving_1",
@@ -1839,7 +1855,10 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-03T13:18:39.584325+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "health",
+      "community"
+    ],
     "geo": {
       "city": "Irving",
       "state": "TX",
@@ -8542,7 +8561,15 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-15T22:54:42.242044+00:00"
     },
-    "unified_tags": []
+    "unified_tags": [],
+    "geo": {
+      "city": "Mesquite",
+      "state": "TX",
+      "lat": 32.76661,
+      "lng": -96.59947,
+      "precision": "city",
+      "resolved_from": "location.city"
+    }
   },
   {
     "id": "city_of_mesquite_volunteer_services_mesquite_0",
@@ -8590,7 +8617,15 @@
     "unified_tags": [
       "environment",
       "community"
-    ]
+    ],
+    "geo": {
+      "city": "Mesquite",
+      "state": "TX",
+      "lat": 32.76661,
+      "lng": -96.59947,
+      "precision": "city",
+      "resolved_from": "location.city"
+    }
   },
   {
     "id": "copilot_animal_rescue_denton_3",
@@ -11371,7 +11406,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "animals",
+      "community"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -12180,7 +12218,15 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-15T22:54:42.242044+00:00"
     },
-    "unified_tags": []
+    "unified_tags": [],
+    "geo": {
+      "city": "Dallas",
+      "state": "TX",
+      "lat": 32.77627,
+      "lng": -96.79686,
+      "precision": "city",
+      "resolved_from": "location.city"
+    }
   },
   {
     "id": "volunteer_dfps_direct_service_dallas_2",
@@ -12228,7 +12274,15 @@
     "unified_tags": [
       "seniors",
       "disabilities"
-    ]
+    ],
+    "geo": {
+      "city": "Dallas",
+      "state": "TX",
+      "lat": 32.77627,
+      "lng": -96.79686,
+      "precision": "city",
+      "resolved_from": "location.city"
+    }
   },
   {
     "id": "volunteer_dfps_direct_service_dallas_3",
@@ -12277,7 +12331,15 @@
       "seniors",
       "disabilities",
       "health"
-    ]
+    ],
+    "geo": {
+      "city": "Dallas",
+      "state": "TX",
+      "lat": 32.77627,
+      "lng": -96.79686,
+      "precision": "city",
+      "resolved_from": "location.city"
+    }
   },
   {
     "id": "volunteer_dfps_direct_service_dallas_0",
@@ -12325,7 +12387,15 @@
       "children",
       "health",
       "community"
-    ]
+    ],
+    "geo": {
+      "city": "Dallas",
+      "state": "TX",
+      "lat": 32.77627,
+      "lng": -96.79686,
+      "precision": "city",
+      "resolved_from": "location.city"
+    }
   },
   {
     "id": "design_connect_create_0",
@@ -13022,7 +13092,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Sachse",
       "state": "TX",
@@ -14000,7 +14072,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -20842,7 +20916,10 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-07-21T03:59:17.050665+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "education",
+      "community"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -21118,7 +21195,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": []
+    "unified_tags": [
+      "civic"
+    ]
   },
   {
     "id": "international_rescue_committee_dallas_3",
@@ -21217,7 +21296,15 @@
       "model": "expiry-rule",
       "checked_at": "2026-08-15T22:54:46.930172+00:00"
     },
-    "unified_tags": []
+    "unified_tags": [],
+    "geo": {
+      "city": "Irving",
+      "state": "TX",
+      "lat": 32.82952,
+      "lng": -96.94422,
+      "precision": "city",
+      "resolved_from": "location.city"
+    }
   },
   {
     "id": "irving_arts_center_irving_0",
@@ -21265,7 +21352,15 @@
       "education",
       "arts",
       "community"
-    ]
+    ],
+    "geo": {
+      "city": "Irving",
+      "state": "TX",
+      "lat": 32.82952,
+      "lng": -96.94422,
+      "precision": "city",
+      "resolved_from": "location.city"
+    }
   },
   {
     "id": "irving_arts_center_irving_2",
@@ -21309,7 +21404,15 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-15T22:54:42.242044+00:00"
     },
-    "unified_tags": []
+    "unified_tags": [],
+    "geo": {
+      "city": "Irving",
+      "state": "TX",
+      "lat": 32.82952,
+      "lng": -96.94422,
+      "precision": "city",
+      "resolved_from": "location.city"
+    }
   },
   {
     "id": "irving_arts_center_irving_3",
@@ -21358,7 +21461,15 @@
       "arts",
       "education",
       "community"
-    ]
+    ],
+    "geo": {
+      "city": "Irving",
+      "state": "TX",
+      "lat": 32.82952,
+      "lng": -96.94422,
+      "precision": "city",
+      "resolved_from": "location.city"
+    }
   },
   {
     "id": "irving_cares_2",
@@ -22075,7 +22186,11 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "children",
+      "education",
+      "community"
+    ],
     "geo": {
       "city": "Frisco",
       "state": "TX",
@@ -23011,7 +23126,15 @@
       "model": "expiry-rule",
       "checked_at": "2026-08-15T22:54:46.930172+00:00"
     },
-    "unified_tags": []
+    "unified_tags": [],
+    "geo": {
+      "city": "Irving",
+      "state": "TX",
+      "lat": 32.82952,
+      "lng": -96.94422,
+      "precision": "city",
+      "resolved_from": "location.city"
+    }
   },
   {
     "id": "las_colinas_irving_0",
@@ -23055,7 +23178,15 @@
       "model": "expiry-rule",
       "checked_at": "2026-08-15T22:54:46.930172+00:00"
     },
-    "unified_tags": []
+    "unified_tags": [],
+    "geo": {
+      "city": "Irving",
+      "state": "TX",
+      "lat": 32.82952,
+      "lng": -96.94422,
+      "precision": "city",
+      "resolved_from": "location.city"
+    }
   },
   {
     "id": "las_colinas_irving_2",
@@ -23099,7 +23230,15 @@
       "model": "expiry-rule",
       "checked_at": "2026-08-15T22:54:46.930172+00:00"
     },
-    "unified_tags": []
+    "unified_tags": [],
+    "geo": {
+      "city": "Irving",
+      "state": "TX",
+      "lat": 32.82952,
+      "lng": -96.94422,
+      "precision": "city",
+      "resolved_from": "location.city"
+    }
   },
   {
     "id": "life_message_rowlett_2",
@@ -23994,7 +24133,15 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-15T22:54:42.242044+00:00"
     },
-    "unified_tags": []
+    "unified_tags": [],
+    "geo": {
+      "city": "Dallas",
+      "state": "TX",
+      "lat": 32.77627,
+      "lng": -96.79686,
+      "precision": "city",
+      "resolved_from": "location.city"
+    }
   },
   {
     "id": "medical_city_dallas_hospital_dallas_4",
@@ -24042,7 +24189,15 @@
     "unified_tags": [
       "animals",
       "health"
-    ]
+    ],
+    "geo": {
+      "city": "Dallas",
+      "state": "TX",
+      "lat": 32.77627,
+      "lng": -96.79686,
+      "precision": "city",
+      "resolved_from": "location.city"
+    }
   },
   {
     "id": "medical_city_dallas_hospital_dallas_5",
@@ -24090,7 +24245,15 @@
     "unified_tags": [
       "children",
       "health"
-    ]
+    ],
+    "geo": {
+      "city": "Dallas",
+      "state": "TX",
+      "lat": 32.77627,
+      "lng": -96.79686,
+      "precision": "city",
+      "resolved_from": "location.city"
+    }
   },
   {
     "id": "medical_city_dallas_hospital_dallas_6",
@@ -24135,7 +24298,15 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-15T22:54:42.242044+00:00"
     },
-    "unified_tags": []
+    "unified_tags": [],
+    "geo": {
+      "city": "Dallas",
+      "state": "TX",
+      "lat": 32.77627,
+      "lng": -96.79686,
+      "precision": "city",
+      "resolved_from": "location.city"
+    }
   },
   {
     "id": "medical_city_dallas_hospital_dallas_0",
@@ -24179,7 +24350,15 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-15T22:54:42.242044+00:00"
     },
-    "unified_tags": []
+    "unified_tags": [],
+    "geo": {
+      "city": "Dallas",
+      "state": "TX",
+      "lat": 32.77627,
+      "lng": -96.79686,
+      "precision": "city",
+      "resolved_from": "location.city"
+    }
   },
   {
     "id": "medical_city_dallas_hospital_dallas_3",
@@ -24224,7 +24403,15 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-15T22:54:42.242044+00:00"
     },
-    "unified_tags": []
+    "unified_tags": [],
+    "geo": {
+      "city": "Dallas",
+      "state": "TX",
+      "lat": 32.77627,
+      "lng": -96.79686,
+      "precision": "city",
+      "resolved_from": "location.city"
+    }
   },
   {
     "id": "medical_city_dallas_hospital_dallas_2",
@@ -24268,7 +24455,15 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-15T22:54:42.242044+00:00"
     },
-    "unified_tags": []
+    "unified_tags": [],
+    "geo": {
+      "city": "Dallas",
+      "state": "TX",
+      "lat": 32.77627,
+      "lng": -96.79686,
+      "precision": "city",
+      "resolved_from": "location.city"
+    }
   },
   {
     "id": "metro_relief_inc_0",
@@ -35807,7 +36002,10 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "food_security",
+      "community"
+    ],
     "geo": {
       "city": null,
       "state": "TX",
@@ -35914,7 +36112,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -37223,7 +37423,15 @@
     },
     "unified_tags": [
       "veterans"
-    ]
+    ],
+    "geo": {
+      "city": "Fort Worth",
+      "state": "TX",
+      "lat": 32.75318,
+      "lng": -97.33275,
+      "precision": "city",
+      "resolved_from": "location.city"
+    }
   },
   {
     "id": "vickery_meadow_food_pantry_and_clothes_closet_dallas_5",
@@ -37374,7 +37582,10 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community",
+      "food_security"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -38336,7 +38547,15 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-15T22:54:42.242044+00:00"
     },
-    "unified_tags": []
+    "unified_tags": [],
+    "geo": {
+      "city": "Euless",
+      "state": "TX",
+      "lat": 32.83707,
+      "lng": -97.08195,
+      "precision": "city",
+      "resolved_from": "location.city"
+    }
   },
   {
     "id": "disabilities_services_dfw_voa_texas_euless_4",
@@ -38379,9 +38598,17 @@
       "category": "manual_override",
       "reason": "manual override",
       "model": "override",
-      "checked_at": "2026-08-16T06:56:14.923441+00:00"
+      "checked_at": "2026-09-06T10:50:53.226234+00:00"
     },
-    "unified_tags": []
+    "unified_tags": [],
+    "geo": {
+      "city": "Euless",
+      "state": "TX",
+      "lat": 32.83707,
+      "lng": -97.08195,
+      "precision": "city",
+      "resolved_from": "location.city"
+    }
   },
   {
     "id": "disabilities_services_dfw_voa_texas_euless_2",
@@ -38424,9 +38651,17 @@
       "category": "manual_override",
       "reason": "manual override",
       "model": "override",
-      "checked_at": "2026-08-16T06:56:14.923441+00:00"
+      "checked_at": "2026-09-06T10:50:53.226234+00:00"
     },
-    "unified_tags": []
+    "unified_tags": [],
+    "geo": {
+      "city": "Euless",
+      "state": "TX",
+      "lat": 32.83707,
+      "lng": -97.08195,
+      "precision": "city",
+      "resolved_from": "location.city"
+    }
   },
   {
     "id": "disabilities_services_dfw_voa_texas_euless_3",
@@ -38470,7 +38705,15 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-15T22:54:42.242044+00:00"
     },
-    "unified_tags": []
+    "unified_tags": [],
+    "geo": {
+      "city": "Euless",
+      "state": "TX",
+      "lat": 32.83707,
+      "lng": -97.08195,
+      "precision": "city",
+      "resolved_from": "location.city"
+    }
   },
   {
     "id": "disabilities_services_dfw_voa_texas_euless_1",
@@ -38515,7 +38758,15 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-15T22:54:42.242044+00:00"
     },
-    "unified_tags": []
+    "unified_tags": [],
+    "geo": {
+      "city": "Euless",
+      "state": "TX",
+      "lat": 32.83707,
+      "lng": -97.08195,
+      "precision": "city",
+      "resolved_from": "location.city"
+    }
   },
   {
     "id": "weatherford_wags_8",
