@@ -85,7 +85,7 @@ function scheduleDateLabel(o) {
   return null
 }
 
-export default function ListingsPanel({ listings, compact = false, initialCauses = [], initialCities = [], initialVisible = PAGE_SIZE, onExpand, onSelectOrg, onSelectListing }) {
+export default function ListingsPanel({ listings, compact = false, initialCauses = [], initialCities = [], initialVisible = PAGE_SIZE, onExpand, onSelectOrg, onSelectListing, onInteract }) {
   // Multi-select: empty array = "All". Otherwise the listing must match ANY
   // selected site and ANY selected cause (OR within a group, AND across groups).
   // initialCauses / initialCities let the pre-filtered /volunteer routes start
@@ -125,6 +125,9 @@ export default function ListingsPanel({ listings, compact = false, initialCauses
   useEffect(() => {
     if (!filtersMounted.current) { filtersMounted.current = true; return }
     topRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    // Same signal tells the page it's no longer showing its default view, so
+    // the standing heading can step out of the way (see HomeClient).
+    onInteract?.()
   }, [sources, causes, cities, when, sort, origin])
 
   // Source filter options + counts

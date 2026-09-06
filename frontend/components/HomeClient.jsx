@@ -95,6 +95,9 @@ export default function HomeClient({
   const [selectedListing, setSelectedListing] = useState(null)
   // Mobile hamburger menu (the desktop TabBar row is hidden < lg).
   const [menuOpen, setMenuOpen] = useState(false)
+  // Has the visitor done anything yet? Drives whether the standing page
+  // heading is still on screen — see showStandingCopy below.
+  const [touched, setTouched] = useState(false)
 
   const headerRef   = useRef(null)
 
@@ -112,6 +115,10 @@ export default function HomeClient({
     ro.observe(el)
     return () => ro.disconnect()
   }, [])
+
+  // A typed query counts as an interaction wherever it happens. (On the home
+  // route isEmpty already covers this; on the /volunteer pages it doesn't.)
+  useEffect(() => { if (search.trim()) setTouched(true) }, [search])
 
   const router = useRouter()
   const pathname = usePathname()
@@ -207,6 +214,7 @@ export default function HomeClient({
     }
     setSearch('')
     setFocusedTab(null)
+    setTouched(false)
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
@@ -214,6 +222,7 @@ export default function HomeClient({
   // query to just that tab's data — see isStacked below) and scrolls to top.
   function handleTabChange(tabId) {
     setFocusedTab(tabId)
+    setTouched(true)
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
@@ -235,13 +244,17 @@ export default function HomeClient({
   const isStacked  = !!q && (focusedTab === null || focusedTab === 'search')
   const isEmpty    = !q && !focusedTab
 
-  // The <h1>/intro/FAQ block. On a /volunteer page it's the page's own title
-  // and stays put — it's also the <h1> a crawler needs on every one of those
-  // URLs. On the home route it belongs to the welcome screen only: once you
-  // pick a tab or type a search you're looking at results, and a standing
-  // page title just pushes them down. Crawlers see the default state, so
-  // hiding it behind interaction costs nothing.
-  const showStandingCopy = !isHomeRoute || isEmpty
+  // The <h1>/intro/FAQ block. It has to be in the server-rendered HTML — it's
+  // the <h1> a crawler needs on all 240+ of these URLs, and the FAQ backs the
+  // FAQPage structured data. But it's page furniture, not results: the moment
+  // you pick a tab, type a search, or touch a filter, you're looking at a
+  // result set and a standing title is just pushing it down the screen.
+  //
+  // So: present on first paint (which is all a crawler ever sees), gone on the
+  // first interaction of any kind. `touched` covers filter and sort changes,
+  // which live inside ListingsPanel and report back via onInteract; tab clicks
+  // and searches are visible here directly.
+  const showStandingCopy = !touched && (isEmpty || !isHomeRoute)
 
   return (
     <>
@@ -325,6 +338,7 @@ export default function HomeClient({
                   initialCauses={initialCauses}
                   initialCities={initialCities}
                   initialVisible={initialVisible}
+                  onInteract={() => setTouched(true)}
                   onSelectOrg={setSelectedOrg}
                   onSelectListing={setSelectedListing}
                 />
@@ -344,6 +358,7 @@ export default function HomeClient({
                 initialCauses={initialCauses}
                 initialCities={initialCities}
                 initialVisible={initialVisible}
+                onInteract={() => setTouched(true)}
                 onSelectOrg={setSelectedOrg}
                 onSelectListing={setSelectedListing}
               />

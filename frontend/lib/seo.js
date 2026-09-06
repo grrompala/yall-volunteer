@@ -161,17 +161,18 @@ export function tagPageCopy(tag, listings) {
     `the Dallas metro, updated weekly. Every listing links back to the original posting, where you sign up.`
 
   const cities = s.topCities.slice(0, 5).map(c => c.city)
-  const intro = [
-    `${s.total} ${lower} volunteer ${plural(s.total, 'role', 'roles')} are open right now across ` +
-      `${METRO}, posted by ${s.orgCount} ${plural(s.orgCount, 'organization')} and ` +
-      `${sourceSentence(s.sources)}.`,
-    cities.length
-      ? `Most are in ${joinList(cities)}${s.topCities.length > 5 ? ', and elsewhere in the metro' : ''}.`
-      : '',
-    refreshed
-      ? `Last refreshed ${refreshed}. Past-dated events are removed daily, and every listing links back to where it was posted — the organization's own site, or the portal it posted to.`
-      : '',
-  ].filter(Boolean).join(' ')
+
+  // Just the numbers. This used to also name the top cities, the sources, the
+  // refresh date and the expiry policy — four sentences of throat-clearing above
+  // a results grid that people came here to scan. Anyone who wants the detail
+  // has the FAQ at the foot of the page and /about.
+  // The <h1> directly above already names the cause, so the lead doesn't repeat
+  // it — which also sidesteps the noun-plural tags reading badly as adjectives
+  // ("animals volunteer roles", "seniors volunteer roles"). Same shape as the
+  // home and city leads.
+  const intro =
+    `${s.total} open volunteer ${plural(s.total, 'role', 'roles')} from ${s.orgCount} ` +
+    `${plural(s.orgCount, 'organization')} across ${METRO}.`
 
   const topOrg = s.topOrgs[0]
   const faq = [
@@ -215,15 +216,11 @@ export function cityPageCopy(city, listings) {
     `updated weekly. Every listing links back to the original posting, where you sign up.`
 
   const causes = s.topTags.slice(0, 5).map(t => tagMeta(t.tag).label.toLowerCase())
-  const intro = [
-    `${s.total} volunteer ${plural(s.total, 'opportunity', 'opportunities')} in ${city}, Texas ` +
-      `${plural(s.total, 'is', 'are')} open right now, posted by ${s.orgCount} ` +
-      `${plural(s.orgCount, 'organization')} and ${sourceSentence(s.sources)}.`,
-    causes.length ? `The most common causes here are ${joinList(causes)}.` : '',
-    refreshed
-      ? `Last refreshed ${refreshed}. Every listing links back to where it was posted, which is where you sign up.`
-      : '',
-  ].filter(Boolean).join(' ')
+
+  // Numbers only — see the note on tagPageCopy above.
+  const intro =
+    `${s.total} open volunteer ${plural(s.total, 'role', 'roles')} from ${s.orgCount} ` +
+    `${plural(s.orgCount, 'organization')} in ${city}, Texas.`
 
   const topOrg = s.topOrgs[0]
   const faq = [
