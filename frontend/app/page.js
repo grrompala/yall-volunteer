@@ -76,7 +76,8 @@ export default function Home() {
       q: 'How do I find volunteer opportunities in Dallas?',
       a:
         `Good Deeds Dallas indexes ${s.total.toLocaleString()} current openings from ${s.orgCount} ` +
-        `organizations across ${METRO}. Browse by cause (food security, animals, seniors, and 18 more) or ` +
+        `organizations across ${METRO}. Browse by cause (food security, animals, seniors, and ` +
+        `${tags.length - 3} more) or ` +
         `by city, search by keyword, or describe what you're after in Smart Search. Each result links to the ` +
         `nonprofit's own signup page.`,
     },
@@ -89,16 +90,18 @@ export default function Home() {
     {
       q: 'Where do these listings come from?',
       a:
-        `They're scraped weekly from Idealist, Volunteer McKinney, Volunteer Garland, Voly Dallas, and the ` +
-        `websites of local nonprofits that publish no structured feed at all. Everything then runs through a ` +
-        `filter that removes duplicates, expired events, paid positions, and donation drives that aren't ` +
-        `really volunteer roles, and gets re-tagged against one consistent set of cause labels so filtering ` +
-        `works across sources.`,
+        `From the volunteer listings the organizations themselves publish. Good Deeds Dallas checks six public ` +
+        `sources each week — Idealist, Volunteer McKinney, Volunteer Garland, Voly Dallas, Dallas Doing Good, ` +
+        `and the websites of local nonprofits that don't post to any portal — and brings what it finds ` +
+        `together in one place. Everything then passes a quality check that removes duplicates, expired ` +
+        `events, paid positions, and donation drives that aren't really volunteer roles, and is re-tagged ` +
+        `against one consistent set of cause labels so filtering works across sources. Listings link back to ` +
+        `the original posting rather than replacing it.`,
     },
     {
       q: 'How often is the list updated?',
       a:
-        `The full scrape runs weekly and past-dated events are pruned daily, so nothing shown here has ` +
+        `Every source is rechecked weekly and past-dated events are removed daily, so nothing shown here has ` +
         `already happened. ${refreshed ? `The current data was refreshed on ${refreshed}.` : ''}`,
     },
   ]

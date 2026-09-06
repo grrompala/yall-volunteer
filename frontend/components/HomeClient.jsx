@@ -222,6 +222,10 @@ export default function HomeClient({
   // search while on it (or on the true home screen, before any tab is
   // picked) should fall back to the combined "search everything" view below,
   // the same as it does from the home screen.
+  // Is this the bare home route, or one of the pre-filtered /volunteer pages?
+  // (Those always mount with a cause, a city, or a focused tab.)
+  const isHomeRoute = !initialFocusedTab && !initialCauses.length && !initialCities.length
+
   const showSearch = focusedTab === 'search' && !q
   // Stacked (combined, all-sections) search view applies from the general
   // tab — the true home screen, or the Smart Search tab once it has a typed
@@ -230,6 +234,14 @@ export default function HomeClient({
   // back out to every section.
   const isStacked  = !!q && (focusedTab === null || focusedTab === 'search')
   const isEmpty    = !q && !focusedTab
+
+  // The <h1>/intro/FAQ block. On a /volunteer page it's the page's own title
+  // and stays put — it's also the <h1> a crawler needs on every one of those
+  // URLs. On the home route it belongs to the welcome screen only: once you
+  // pick a tab or type a search you're looking at results, and a standing
+  // page title just pushes them down. Crawlers see the default state, so
+  // hiding it behind interaction costs nothing.
+  const showStandingCopy = !isHomeRoute || isEmpty
 
   return (
     <>
@@ -264,11 +276,9 @@ export default function HomeClient({
       />
 
       <main className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-10 py-8 lg:py-12">
-        {/* The page's <h1> and lead paragraph. Always rendered — it identifies
-            the page whatever the user has filtered or searched, and it's the
-            first content a crawler reads. `centered` on the home screen, where
-            it sits above the welcome copy rather than above a results grid. */}
-        {heading && (
+        {/* The page's <h1> and lead paragraph. `centered` on the home screen,
+            where it sits above the welcome copy rather than above a grid. */}
+        {heading && showStandingCopy && (
           <PageIntro
             heading={heading}
             intro={intro}
@@ -356,7 +366,7 @@ export default function HomeClient({
             the HTML a crawler sees, which is the default state. */}
         {children && isEmpty && <div className="mt-14">{children}</div>}
 
-        <FaqSection faq={faq} />
+        {showStandingCopy && <FaqSection faq={faq} />}
       </main>
 
       <SiteFooter onHome={goHome} lastUpdated={lastUpdated} />

@@ -62,7 +62,7 @@ export default function AboutPage() {
       q: 'How do I get my organization listed?',
       a:
         `If you post to Idealist, Volunteer McKinney, Volunteer Garland or Voly Dallas, your openings are ` +
-        `probably already here — the weekly scrape picks them up. If you only publish on your own website, ` +
+        `probably already here — the weekly refresh picks them up. If you only publish on your own website, ` +
         `email info@good-deeds-dallas.org and the site can add you to the curated list it extracts from ` +
         `directly. Listing is free.`,
     },
@@ -134,7 +134,7 @@ export default function AboutPage() {
 
         <Section id="sources" title="Where the listings come from">
           <p>
-            Six sources, re-scraped weekly:
+            Six public sources are rechecked every week:
           </p>
           <ul className="list-disc pl-5 space-y-1.5">
             <li>
@@ -151,15 +151,19 @@ export default function AboutPage() {
               local nonprofits.
             </li>
             <li>
+              <strong className="text-ink">Dallas Doing Good</strong> — local coverage of nonprofits and the
+              volunteer needs they publish.
+            </li>
+            <li>
               <strong className="text-ink">Nonprofits&apos; own websites</strong> — a curated list of local
               organizations that publish no structured feed at all. Their volunteer pages are read and
               converted into structured listings by a language model.
             </li>
-            <li>
-              <strong className="text-ink">Local subreddits</strong> — surfaced separately as community
-              chatter, not mixed into the opportunity index.
-            </li>
           </ul>
+          <p>
+            Local subreddits are read too, but kept separate as community chatter rather than mixed into the
+            opportunity index.
+          </p>
         </Section>
 
         <Section id="quality" title="How listings are quality-checked">
@@ -211,7 +215,7 @@ export default function AboutPage() {
 
         <Section id="cadence" title="How often it updates">
           <p>
-            The full scrape, quality-control and re-tagging pipeline runs weekly and unattended. Expiry runs
+            The full collection, quality-control and re-tagging pipeline runs weekly and unattended. Expiry runs
             daily. The site rebuilds on every data change, so the counts on every page — {s.total.toLocaleString()}{' '}
             {plural(s.total, 'opportunity', 'opportunities')} across {orgs.length} organization pages as of
             this build — are generated from the current data rather than written by hand.

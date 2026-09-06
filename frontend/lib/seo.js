@@ -194,10 +194,9 @@ export function tagPageCopy(tag, listings) {
     {
       q: `How current are these ${lower} listings?`,
       a:
-        `The full index is re-scraped weekly and one-time events whose date has passed are removed daily, so ` +
-        `what you see is what was live as of ${refreshed || 'the most recent refresh'}. Listings are also run ` +
-        `through a quality filter that removes duplicates, paid positions, and donation drives that aren't ` +
-        `actually volunteer roles.`,
+        `Every source is rechecked weekly, and one-time events are removed the day after they happen, so what ` +
+        `you see is what was live as of ${refreshed || 'the most recent refresh'}. Listings also pass a quality ` +
+        `check that removes duplicates, paid positions, and donation drives that aren't actually volunteer roles.`,
     },
   ]
 
