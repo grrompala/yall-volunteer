@@ -2,14 +2,27 @@ name: Daily Reddit volunteer digest
 
 # Scrapes the local DFW subreddits (fetch_reddit.py, search.rss — no LLM, no
 # API keys), diffs the result against the previously committed snapshot, and
-# opens a GitHub issue listing any posts that are NEW since the last run. You
-# get an email from GitHub because you own the repo. Quiet days open nothing.
+# emails the posts that are NEW since the last run. Quiet days send nothing.
+#
+# This used to open a GitHub issue per digest and rely on repo-watch
+# notifications to turn that into an email. It worked — nine issues in three
+# weeks — but the mail never actually arrived, and the issue list became a
+# dumping ground for notifications nobody was going to close. It now sends the
+# mail itself.
 #
 # Reddit rate-limits datacenter IPs harder than home IPs, so a run can come
 # back empty because it was throttled rather than because it was quiet — the
-# digest step detects that (0 raw results) and opens a single health issue
-# instead of silently notifying nothing. The updated snapshot is committed only
-# on days that produced new posts, to keep git history clean.
+# digest step detects that (0 raw results) and sends a health warning instead
+# of silently reporting nothing. The updated snapshot is committed only on days
+# that produced new posts, to keep git history clean.
+#
+# Required repository secrets (Settings → Secrets and variables → Actions):
+#   MAIL_USERNAME  the Gmail address sending the mail
+#   MAIL_PASSWORD  a Google App Password for that account, NOT the account
+#                  password (Google account → Security → 2-Step Verification →
+#                  App passwords). Revocable on its own.
+#   MAIL_TO        where to deliver the digest. A secret rather than a literal
+#                  because this repository is public.
 
 on:
   schedule:
@@ -19,7 +32,6 @@ on:
 
 permissions:
   contents: write   # commit the refreshed reddit_raw.json snapshot
-  issues: write     # open the digest / health issue
 
 concurrency:
   group: reddit-notify
@@ -47,7 +59,7 @@ jobs:
           PYTHONIOENCODING: 'utf-8'
           PYTHONUNBUFFERED: '1'
         # Don't fail the job if the scrape errors/exits non-zero — the digest
-        # step turns "no results" into a health issue.
+        # step turns "no results" into a health warning.
         run: python fetch_reddit.py 2>&1 | tee /tmp/scrape.log || true
 
       - name: Build digest + health check
@@ -60,7 +72,8 @@ jobs:
             --baseline /tmp/reddit_baseline.json \
             --current  frontend/public/data/reddit_raw.json \
             --log      /tmp/scrape.log \
-            --body-out reddit-issue-body.md
+            --body-out /tmp/reddit-body.md \
+            --html-out /tmp/reddit-body.html
 
       # Persist the advanced snapshot only when there were new posts and the
       # scrape was healthy — avoids daily last_scraped churn and avoids baking
@@ -78,37 +91,29 @@ jobs:
             git push
           fi
 
-      - name: Notify via GitHub issue
+      # Nothing to say on a quiet, healthy day — no mail is sent at all.
+      - name: Email the digest
         if: always() && (steps.digest.outputs.has_new == 'true' || steps.digest.outputs.scrape_ok == 'false')
-        uses: actions/github-script@v7
+        uses: dawidd6/action-send-mail@v3
         with:
-          script: |
-            const fs = require('fs');
-            const hasNew = '${{ steps.digest.outputs.has_new }}' === 'true';
-            const scrapeOk = '${{ steps.digest.outputs.scrape_ok }}' === 'true';
-            const count = '${{ steps.digest.outputs.new_count }}';
-            const today = new Date().toISOString().slice(0, 10);
-            const body = fs.readFileSync('reddit-issue-body.md', 'utf8');
-            const { owner, repo } = context.repo;
+          server_address: smtp.gmail.com
+          server_port: 465
+          secure: true
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          from: Good Deeds Dallas <${{ secrets.MAIL_USERNAME }}>
+          to: ${{ secrets.MAIL_TO }}
+          subject: ${{ steps.digest.outputs.scrape_ok == 'false' && '⚠️ Reddit scrape returned nothing' || format('🙋 {0} new volunteer post(s) on Reddit', steps.digest.outputs.new_count) }}
+          html_body: file:///tmp/reddit-body.html
+          # Plain-text alternative for clients that won't render HTML.
+          body: file:///tmp/reddit-body.md
+          convert_markdown: false
 
-            if (!scrapeOk) {
-              const open = await github.rest.issues.listForRepo({
-                owner, repo, state: 'open', labels: 'reddit-scrape-health',
-              });
-              if (open.data.length === 0) {
-                await github.rest.issues.create({
-                  owner, repo,
-                  title: `⚠️ Reddit notify: scrape returned no results (${today})`,
-                  body, labels: ['reddit-scrape-health'],
-                });
-                core.warning('Scrape returned no results — opened a health issue.');
-              } else {
-                core.warning('Scrape empty, but a health issue is already open — not duplicating.');
-              }
-            } else if (hasNew) {
-              await github.rest.issues.create({
-                owner, repo,
-                title: `🙋 ${count} new volunteer post(s) on Reddit — ${today}`,
-                body, labels: ['reddit-digest'],
-              });
-            }
+      # A missing or wrong secret makes the mail step fail silently as far as
+      # the inbox is concerned, so say so in the run log.
+      - name: Warn if mail was not configured
+        if: failure()
+        run: |
+          echo "::warning::The digest step ran but the email did not send. Check that"
+          echo "::warning::MAIL_USERNAME, MAIL_PASSWORD and MAIL_TO are set in repository secrets,"
+          echo "::warning::and that MAIL_PASSWORD is a Google App Password (not the account password)."

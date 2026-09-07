@@ -1,0 +1,79 @@
+name: Clean up old Reddit digest issues
+
+# One-shot housekeeping. The Reddit digest used to open a GitHub issue per run;
+# it now emails instead (reddit-notify.yml), leaving a backlog of digest issues
+# nobody is going to close by hand.
+#
+# Run it once from the Actions tab, then delete this file.
+#
+# It tries a real delete first (GraphQL deleteIssue) and falls back to closing
+# when the token lacks permission for that — the built-in GITHUB_TOKEN often
+# does. A closed issue drops out of the default issue list either way, so the
+# fallback still achieves the tidy-up; permanent deletion is otherwise a
+# per-issue thing in the web UI.
+#
+# Scoped strictly to issues carrying the digest labels, so nothing else in the
+# repository can be touched by it. Defaults to a dry run — set `confirm` to
+# "yes" to actually act.
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: 'Type "yes" to actually delete/close. Anything else lists what it would do.'
+        required: true
+        default: 'no'
+
+permissions:
+  issues: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            const dryRun = context.payload.inputs.confirm !== 'yes';
+            const LABELS = ['reddit-digest', 'reddit-scrape-health'];
+
+            const targets = [];
+            for (const label of LABELS) {
+              const found = await github.paginate(github.rest.issues.listForRepo, {
+                owner, repo, state: 'all', labels: label, per_page: 100,
+              });
+              // listForRepo returns PRs too; they are not ours to touch.
+              for (const i of found) {
+                if (!i.pull_request && !targets.some(t => t.number === i.number)) targets.push(i);
+              }
+            }
+
+            core.info(`${targets.length} digest issue(s) matched ${LABELS.join(' / ')}`);
+            for (const i of targets) core.info(`  #${i.number} [${i.state}] ${i.title}`);
+
+            if (dryRun) {
+              core.notice(`Dry run — nothing changed. Re-run with confirm: yes to act on ${targets.length} issue(s).`);
+              return;
+            }
+
+            let deleted = 0, closed = 0;
+            for (const issue of targets) {
+              try {
+                await github.graphql(
+                  'mutation($id: ID!) { deleteIssue(input: {issueId: $id}) { clientMutationId } }',
+                  { id: issue.node_id }
+                );
+                deleted++;
+              } catch (err) {
+                core.info(`  #${issue.number}: delete unavailable (${err.message.split('\n')[0]}) — closing instead`);
+                if (issue.state !== 'closed') {
+                  await github.rest.issues.update({
+                    owner, repo, issue_number: issue.number, state: 'closed',
+                    state_reason: 'not_planned',
+                  });
+                }
+                closed++;
+              }
+            }
+            core.notice(`Done: ${deleted} deleted, ${closed} closed.`);
