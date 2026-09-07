@@ -85,7 +85,7 @@ function scheduleDateLabel(o) {
   return null
 }
 
-export default function ListingsPanel({ listings, compact = false, initialCauses = [], initialCities = [], initialVisible = PAGE_SIZE, onExpand, onSelectOrg, onSelectListing, onInteract }) {
+export default function ListingsPanel({ listings, compact = false, initialCauses = [], initialCities = [], initialVisible = PAGE_SIZE, hideHeading = false, onExpand, onSelectOrg, onSelectListing, onInteract }) {
   // Multi-select: empty array = "All". Otherwise the listing must match ANY
   // selected site and ANY selected cause (OR within a group, AND across groups).
   // initialCauses / initialCities let the pre-filtered /volunteer routes start
@@ -247,6 +247,7 @@ export default function ListingsPanel({ listings, compact = false, initialCauses
     <SectionShell
       title="Opportunities"
       subtitle={!compact && 'Volunteer opportunities from across the Dallas metro.'}
+      hideHeading={hideHeading}
       count={`${filtered.length} of ${listings.length}`}
       compact={compact}
       onExpand={onExpand}

@@ -64,15 +64,29 @@ export default function Home() {
   const heading = `Volunteer opportunities across ${METRO}`
   const refreshed = formatDate(s.newest)
 
-  // Two facts, on separate lines. Deliberately short: a "biggest categories"
-  // sentence and a "links straight to the organization's own signup page" line
-  // used to sit here. The first was filler (the cause links below list all of
-  // them with real counts) and the second wasn't true — plenty of listings link
-  // to Idealist or Voly rather than the nonprofit's own site.
+  // Three short lines with icons, rendered as a left-aligned list (PageIntro).
+  // The third used to live in the welcome block below as its own centred row;
+  // moving it up here is what lets all three share a left edge, which they
+  // can't do while they're rendered by two different components at two
+  // different column widths.
+  //
+  // Two earlier sentences are gone: a "biggest categories right now" line
+  // (filler — the cause links below list all of them with real counts) and
+  // "every listing links straight to the organization's own signup page",
+  // which wasn't true, since plenty link to Idealist or Voly instead.
   const intro = [
-    `${s.total.toLocaleString()} open volunteer ${plural(s.total, 'role', 'roles')} from ` +
-      `${s.orgCount} ${plural(s.orgCount, 'organization')} across the Dallas metro.`,
-    refreshed ? `Last refreshed ${refreshed}.` : '',
+    {
+      icon: 'count',
+      text:
+        `${s.total.toLocaleString()} open volunteer ${plural(s.total, 'role', 'roles')} from ` +
+        `${s.orgCount} ${plural(s.orgCount, 'organization')} across the Dallas metro.`,
+    },
+    refreshed ? { icon: 'clock', text: `Last refreshed ${refreshed}.` } : null,
+    {
+      icon: 'search',
+      text:
+        'Type a cause, town, or nonprofit in the search above, or choose a category to start exploring.',
+    },
   ].filter(Boolean)
 
   const faq = [

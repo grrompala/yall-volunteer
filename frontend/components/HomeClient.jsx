@@ -338,6 +338,7 @@ export default function HomeClient({
                   initialCauses={initialCauses}
                   initialCities={initialCities}
                   initialVisible={initialVisible}
+                  hideHeading={!isHomeRoute}
                   onInteract={() => setTouched(true)}
                   onSelectOrg={setSelectedOrg}
                   onSelectListing={setSelectedListing}
@@ -358,6 +359,7 @@ export default function HomeClient({
                 initialCauses={initialCauses}
                 initialCities={initialCities}
                 initialVisible={initialVisible}
+                hideHeading={!isHomeRoute}
                 onInteract={() => setTouched(true)}
                 onSelectOrg={setSelectedOrg}
                 onSelectListing={setSelectedListing}
@@ -422,24 +424,11 @@ const SUGGESTED_TAGS = [
 function EmptyHomeState({ onOpenSearch }) {
   return (
     <div className="py-3 lg:py-5 text-center max-w-2xl mx-auto">
-      {/* Intro, center-aligned within the max-w-2xl column (matching the chips
-          below). The greeting line that used to sit here said the same thing as
-          the <h1> and lead paragraph now directly above it, so only the search
-          prompt remains. */}
-      <div className="space-y-3 text-center text-base sm:text-lg text-inkSoft leading-relaxed">
-        <div className="flex items-start justify-center gap-2.5">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden className="mt-1 h-5 w-5 shrink-0 text-brand">
-            <circle cx="11" cy="11" r="7" />
-            <path d="m20 20-3.5-3.5" strokeLinecap="round" />
-          </svg>
-          <span>
-            Type a cause, town, or nonprofit in the search above, or choose
-            a category to start exploring.
-          </span>
-        </div>
-      </div>
-
-      <div className="mt-7 flex flex-wrap items-center justify-center gap-2">
+      {/* The greeting and the search prompt that used to sit here have moved
+          into the page lead above (app/page.js), so all three lines render as
+          one icon list with a shared left edge. What's left is the chips and
+          the Smart Search callout. */}
+      <div className="flex flex-wrap items-center justify-center gap-2">
         {SUGGESTED_TAGS.map(tagId => (
           <TagChip
             key={tagId}
