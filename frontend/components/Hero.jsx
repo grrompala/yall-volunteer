@@ -6,7 +6,17 @@
 // reading "Good Deeds Dallas — Pay it forward in The Big D"). To change the
 // wordmark, swap that image; the footer keeps the text version.
 
-export default function Hero({ search, setSearch, placeholder = 'Search across all sections…', onWordmarkClick, onMenuToggle, menuOpen = false }) {
+export default function Hero({
+  search,
+  setSearch,
+  placeholder = 'Search across all sections…',
+  onSubmit,           // Enter, or the Search button below
+  canSubmit = false,  // render that button — set where typing alone does not
+                      // apply the query (the Smart Search tab)
+  onWordmarkClick,
+  onMenuToggle,
+  menuOpen = false,
+}) {
   return (
     <section className="relative overflow-hidden border-b border-line bg-gradient-to-br from-brandSoft via-white to-accentSoft">
       <div
@@ -56,33 +66,53 @@ export default function Hero({ search, setSearch, placeholder = 'Search across a
             </button>
           </div>
 
-          {/* Search bar */}
+          {/* Search bar. A <form> so Enter is a real submit — on tabs where
+              typing filters live that's a no-op, but on the Smart Search tab
+              it's the gesture that applies the query (see HomeClient). */}
           <div className="lg:flex-1 lg:max-w-2xl">
             <label htmlFor="hub-search" className="sr-only">Search</label>
-            <div className="relative">
-              <svg
-                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" strokeWidth="2.25"
-                className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-muted pointer-events-none"
-              >
-                <circle cx="11" cy="11" r="7" />
-                <path d="m20 20-3.5-3.5" strokeLinecap="round" />
-              </svg>
-              <input
-                id="hub-search"
-                type="search"
-                value={search}
-                onChange={e => setSearch(e.target.value)}
-                placeholder={placeholder}
-                className="
-                  w-full pl-14 pr-5 py-3.5 text-base sm:text-lg
-                  bg-white border border-line rounded-2xl shadow-searchbar
-                  focus:outline-none focus:ring-4 focus:ring-brand/15 focus:border-brand/40
-                  placeholder:text-subtle
-                "
-              />
-            </div>
+            <form
+              onSubmit={e => { e.preventDefault(); onSubmit?.() }}
+              className="flex items-stretch gap-2"
+            >
+              <div className="relative flex-1">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" strokeWidth="2.25"
+                  className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-muted pointer-events-none"
+                >
+                  <circle cx="11" cy="11" r="7" />
+                  <path d="m20 20-3.5-3.5" strokeLinecap="round" />
+                </svg>
+                <input
+                  id="hub-search"
+                  type="search"
+                  value={search}
+                  onChange={e => setSearch(e.target.value)}
+                  placeholder={placeholder}
+                  className="
+                    w-full pl-14 pr-5 py-3.5 text-base sm:text-lg
+                    bg-white border border-line rounded-2xl shadow-searchbar
+                    focus:outline-none focus:ring-4 focus:ring-brand/15 focus:border-brand/40
+                    placeholder:text-subtle
+                  "
+                />
+              </div>
 
+              {/* Only rendered where Enter actually does something — otherwise
+                  the results are already live and a Go button is a lie. */}
+              {canSubmit && (
+                <button
+                  type="submit"
+                  className="shrink-0 inline-flex items-center gap-1.5 px-5 rounded-2xl bg-brand hover:bg-brandDark text-white text-sm font-semibold shadow-searchbar transition-colors"
+                >
+                  Search
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.25" className="w-4 h-4">
+                    <path d="M5 12h14m-6-6 6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+              )}
+            </form>
           </div>
         </div>
       </div>

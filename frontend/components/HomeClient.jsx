@@ -42,6 +42,7 @@ import { buildOrgs } from './orgs'
 // Search placeholder copy — once a tab is focused, search is scoped to that
 // tab's data only (see isStacked below), so the placeholder should say so.
 const SEARCH_PLACEHOLDERS = {
+  search:        'Search everything (press Enter)…',
   listings:      'Search opportunities…',
   organizations: 'Search organizations…',
   chatter:       'Search Reddit threads…',
@@ -166,11 +167,19 @@ export default function HomeClient({
   }, [])
 
   // ── Search filter ────────────────────────────────────────────────────────
+  // What's in the box (`search`) and what's actually filtering (`activeSearch`)
+  // are the same thing everywhere except the Smart Search tab, where the box is
+  // a draft until submitted — see submitSearch below. Keeping them apart here,
+  // rather than mirroring into a second piece of state, means there is nothing
+  // to keep in sync.
+  const inSmartSearch = focusedTab === 'search'
+  const activeSearch  = inSmartSearch ? '' : search
+
   // `terms` are the parsed query tokens (quoted phrases stay intact); a listing
   // matches only if its haystack contains ALL terms (see lib/search.js). `q` is
   // still used elsewhere as the "is a search active?" flag.
-  const q = search.trim().toLowerCase()
-  const terms = useMemo(() => parseQuery(search), [search])
+  const q = activeSearch.trim().toLowerCase()
+  const terms = useMemo(() => parseQuery(activeSearch), [activeSearch])
   const filteredOpps = useMemo(() => {
     if (!terms.length) return opportunities
     return opportunities.filter(o => {
@@ -205,6 +214,21 @@ export default function HomeClient({
     return timestamps.reduce((max, t) => (t > max ? t : max))
   }, [opportunities])
 
+  // All three navigations below swap the entire view, so they land at the top
+  // of the new one.
+  //
+  // 'instant' is load-bearing. globals.css sets `html { scroll-behavior:
+  // smooth }`, and per spec BOTH 'smooth' and 'auto' defer to that rule — so
+  // any of them leaves an animation running while React replaces the outgoing
+  // content, and the reflow abandons it where it started. That is how
+  // submitting a search from a scrolled Smart Search panel dropped you ~900px
+  // into the listings that had just replaced it. Only 'instant' overrides the
+  // CSS. Nothing is lost visually: the content a smooth scroll would travel
+  // through is already gone by the time it would animate past it.
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'instant' })
+  }
+
   // Home button: clear search + tab, scroll to top. From a pre-filtered route
   // (/volunteer/…), navigate back to the real home URL instead.
   function goHome() {
@@ -215,7 +239,7 @@ export default function HomeClient({
     setSearch('')
     setFocusedTab(null)
     setTouched(false)
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    scrollToTop()
   }
 
   // Tab click always focuses that single section (scoping any active search
@@ -223,25 +247,34 @@ export default function HomeClient({
   function handleTabChange(tabId) {
     setFocusedTab(tabId)
     setTouched(true)
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    scrollToTop()
   }
 
-  // The Smart Search tab hosts the AI query feature, which doesn't depend on
-  // the keyword query — but only while that query is empty. Typing a plain
-  // search while on it (or on the true home screen, before any tab is
-  // picked) should fall back to the combined "search everything" view below,
-  // the same as it does from the home screen.
+  // Enter / the Go button in the top search bar. Everywhere but Smart Search
+  // the results are already live, so this is a no-op. On Smart Search it is
+  // the whole point: the keystrokes were a draft, and applying the query means
+  // leaving the AI panel for the keyword results it asked for. Without this,
+  // one character typed here tore the panel down mid-thought.
+  function submitSearch() {
+    if (!inSmartSearch || !search.trim()) return
+    setFocusedTab(null)
+    scrollToTop()
+  }
+
   // Is this the bare home route, or one of the pre-filtered /volunteer pages?
   // (Those always mount with a cause, a city, or a focused tab.)
   const isHomeRoute = !initialFocusedTab && !initialCauses.length && !initialCities.length
 
-  const showSearch = focusedTab === 'search' && !q
-  // Stacked (combined, all-sections) search view applies from the general
-  // tab — the true home screen, or the Smart Search tab once it has a typed
-  // query. Once one of the three data tabs (Opportunities/Organizations/
-  // Reddit) is focused, search stays scoped to that tab instead of jumping
-  // back out to every section.
-  const isStacked  = !!q && (focusedTab === null || focusedTab === 'search')
+  // Picking the Smart Search tab shows the panel, full stop. It used to also
+  // require an empty keyword box, which made the tab silently unreachable
+  // whenever there was text in the top bar — you had to clear the search to
+  // get back to a feature that has nothing to do with it.
+  const showSearch = inSmartSearch
+  // Stacked (combined, all-sections) search view: a query typed on the true
+  // home screen, before any tab is picked. Once one of the three data tabs
+  // (Opportunities/Organizations/Reddit) is focused, search stays scoped to
+  // that tab instead of jumping back out to every section.
+  const isStacked  = !!q && focusedTab === null
   const isEmpty    = !q && !focusedTab
 
   // The <h1>/intro/FAQ block. It has to be in the server-rendered HTML — it's
@@ -263,13 +296,15 @@ export default function HomeClient({
           search={search}
           setSearch={setSearch}
           placeholder={SEARCH_PLACEHOLDERS[focusedTab] || 'Search across all sections…'}
+          onSubmit={submitSearch}
+          canSubmit={inSmartSearch && !!search.trim()}
           onWordmarkClick={goHome}
           onMenuToggle={() => setMenuOpen(o => !o)}
           menuOpen={menuOpen}
         />
 
         <TabBar
-          active={showSearch ? 'search' : focusedTab}
+          active={focusedTab}
           counts={q ? tabCounts : null}
           onChange={handleTabChange}
           onHome={goHome}
@@ -281,7 +316,7 @@ export default function HomeClient({
           desktop tabs and then closes the menu. */}
       <MobileNav
         open={menuOpen}
-        active={showSearch ? 'search' : focusedTab}
+        active={focusedTab}
         counts={q ? tabCounts : null}
         onChange={id => { handleTabChange(id); setMenuOpen(false) }}
         onHome={() => { goHome(); setMenuOpen(false) }}
