@@ -16,13 +16,18 @@ name: Daily Reddit volunteer digest
 # of silently reporting nothing. The updated snapshot is committed only on days
 # that produced new posts, to keep git history clean.
 #
+# Delivery goes through Resend (see send_email.py) rather than Gmail SMTP:
+# Google would not surface an App Password for this account, and an API key is
+# one revocable credential instead of a password tied to a whole mailbox.
+#
 # Required repository secrets (Settings → Secrets and variables → Actions):
-#   MAIL_USERNAME  the Gmail address sending the mail
-#   MAIL_PASSWORD  a Google App Password for that account, NOT the account
-#                  password (Google account → Security → 2-Step Verification →
-#                  App passwords). Revocable on its own.
-#   MAIL_TO        where to deliver the digest. A secret rather than a literal
-#                  because this repository is public.
+#   RESEND_API_KEY  from resend.com/api-keys
+#   MAIL_TO         where to deliver the digest. A secret rather than a literal
+#                   because this repository is public.
+# Optional:
+#   MAIL_FROM       sender address. Defaults to Resend's shared onboarding
+#                   sender, which only delivers to the address that owns the
+#                   Resend account. Set this after verifying a domain.
 
 on:
   schedule:
@@ -92,28 +97,18 @@ jobs:
           fi
 
       # Nothing to say on a quiet, healthy day — no mail is sent at all.
+      # send_email.py names the exact misconfiguration when Resend rejects a
+      # send, because a message that never arrives is otherwise indistinguishable
+      # from a quiet day.
       - name: Email the digest
         if: always() && (steps.digest.outputs.has_new == 'true' || steps.digest.outputs.scrape_ok == 'false')
-        uses: dawidd6/action-send-mail@v3
-        with:
-          server_address: smtp.gmail.com
-          server_port: 465
-          secure: true
-          username: ${{ secrets.MAIL_USERNAME }}
-          password: ${{ secrets.MAIL_PASSWORD }}
-          from: Good Deeds Dallas <${{ secrets.MAIL_USERNAME }}>
-          to: ${{ secrets.MAIL_TO }}
-          subject: ${{ steps.digest.outputs.scrape_ok == 'false' && '⚠️ Reddit scrape returned nothing' || format('🙋 {0} new volunteer post(s) on Reddit', steps.digest.outputs.new_count) }}
-          html_body: file:///tmp/reddit-body.html
-          # Plain-text alternative for clients that won't render HTML.
-          body: file:///tmp/reddit-body.md
-          convert_markdown: false
-
-      # A missing or wrong secret makes the mail step fail silently as far as
-      # the inbox is concerned, so say so in the run log.
-      - name: Warn if mail was not configured
-        if: failure()
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          MAIL_TO: ${{ secrets.MAIL_TO }}
+          MAIL_FROM: ${{ secrets.MAIL_FROM }}
+          PYTHONIOENCODING: 'utf-8'
         run: |
-          echo "::warning::The digest step ran but the email did not send. Check that"
-          echo "::warning::MAIL_USERNAME, MAIL_PASSWORD and MAIL_TO are set in repository secrets,"
-          echo "::warning::and that MAIL_PASSWORD is a Google App Password (not the account password)."
+          python send_email.py \
+            --subject "${{ steps.digest.outputs.scrape_ok == 'false' && '⚠️ Reddit scrape returned nothing' || format('🙋 {0} new volunteer post(s) on Reddit', steps.digest.outputs.new_count) }}" \
+            --html-file /tmp/reddit-body.html \
+            --text-file /tmp/reddit-body.md
