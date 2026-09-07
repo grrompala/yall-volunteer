@@ -36,9 +36,7 @@ export default function HomeBrowseSection({ tags = [], cities = [] }) {
       {tags.length > 0 && (
         <section aria-labelledby="browse-causes">
           <div id="browse-causes">
-            <SectionHeading href="/volunteer" hrefLabel="All browse pages">
-              Volunteer by cause
-            </SectionHeading>
+            <SectionHeading>Volunteer by cause</SectionHeading>
           </div>
           <ul className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
             {tags.map(({ tag, slug, count }) => {

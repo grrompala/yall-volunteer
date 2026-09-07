@@ -387,7 +387,7 @@ export default function HomeClient({
         {showStandingCopy && <FaqSection faq={faq} />}
       </main>
 
-      <SiteFooter onHome={goHome} lastUpdated={lastUpdated} />
+      <SiteFooter onHome={goHome} lastUpdated={lastUpdated} showBrowse={!isHomeRoute} />
 
       {/* Org summary + full-listing modals (overlay the whole page) */}
       <OrgModal

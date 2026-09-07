@@ -5,11 +5,14 @@
 // links rather than a second copy that drifts. Inside the app shell the
 // wordmark resets the view in place, so it takes an `onHome` handler; on a
 // static page there's nothing to reset and it's just a link to /.
+//
+// `showBrowse` is off on the landing page: it lists every cause and city link
+// itself, so a footer link to the page that lists them goes nowhere new.
 
 import Link from 'next/link'
 import { CONTACT_EMAIL } from './SourcesBlurb'
 
-export default function SiteFooter({ onHome = null, lastUpdated = null }) {
+export default function SiteFooter({ onHome = null, lastUpdated = null, showBrowse = true }) {
   const wordmark = (
     <span className="font-display font-extrabold text-ink text-lg">
       Good Deeds <span className="text-brand">Dallas</span>
@@ -33,9 +36,11 @@ export default function SiteFooter({ onHome = null, lastUpdated = null }) {
         )}
 
         <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 text-sm text-muted">
-          <Link href="/volunteer" className="hover:text-brand transition-colors">
-            Browse
-          </Link>
+          {showBrowse && (
+            <Link href="/volunteer" className="hover:text-brand transition-colors">
+              Browse
+            </Link>
+          )}
           <Link href="/about" className="hover:text-brand transition-colors">
             How it works
           </Link>
