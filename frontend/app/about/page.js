@@ -8,7 +8,7 @@
 // Google looks for on an aggregator — who made this, from what, how often.
 
 import Link from 'next/link'
-import { loadListings, tagCounts, cityCounts, orgCounts } from '../../lib/listings'
+import { loadListings, tagCounts, cityCounts } from '../../lib/listings'
 import {
   summarize, formatDate, breadcrumbLd, faqLd, plural, pageMeta, SITE_URL, SITE_NAME, METRO,
 } from '../../lib/seo'
@@ -47,7 +47,6 @@ export default function AboutPage() {
   const refreshed = formatDate(s.newest)
   const tags = tagCounts()
   const cities = cityCounts()
-  const orgs = orgCounts()
 
   const faq = [
     {
@@ -218,8 +217,8 @@ export default function AboutPage() {
           <p>
             The full collection, quality-control and re-tagging pipeline runs weekly and unattended. Expiry runs
             daily. The site rebuilds on every data change, so the counts on every page — {s.total.toLocaleString()}{' '}
-            {plural(s.total, 'opportunity', 'opportunities')} across {orgs.length} organization pages as of
-            this build — are generated from the current data rather than written by hand.
+            {plural(s.total, 'opportunity', 'opportunities')} as of this build — are generated from the
+            current data rather than written by hand.
           </p>
         </Section>
 
@@ -240,10 +239,6 @@ export default function AboutPage() {
           Browse{' '}
           <Link href="/volunteer" className="text-brand font-semibold hover:text-brandDark">
             by cause or city
-          </Link>
-          , see{' '}
-          <Link href="/volunteer/organizations" className="text-brand font-semibold hover:text-brandDark">
-            all {orgs.length} organizations
           </Link>
           , or start from the{' '}
           <Link href="/" className="text-brand font-semibold hover:text-brandDark">

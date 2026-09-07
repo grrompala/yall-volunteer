@@ -6,16 +6,15 @@
 // a crawler saw almost nothing on it. This is the fix — real HTML, real links,
 // rendered on the server.
 //
-// It's also where the site finally gets internal linking. Cause, city and
-// organization pages were reachable only through eight chips and the /volunteer
-// index; now every one of them is one hop from the root.
+// It's also where the site gets its internal linking. The cause and city pages
+// were reachable only through eight chips and the /volunteer index; now every
+// one of them is a single hop from the root.
 //
-// Server component (no hooks, no 'use client') — passed as children into the
-// client app shell, so none of this ships as JavaScript.
+// Server component (no hooks) — passed as children into the client app shell,
+// so none of this ships as JavaScript.
 
 import Link from 'next/link'
 import { tagMeta } from './tagMeta'
-import { cleanOrgName } from './cleanText'
 
 function SectionHeading({ children, href, hrefLabel }) {
   return (
@@ -30,7 +29,7 @@ function SectionHeading({ children, href, hrefLabel }) {
   )
 }
 
-export default function HomeBrowseSection({ tags = [], cities = [], orgs = [], recent = [], totalOrgs = 0 }) {
+export default function HomeBrowseSection({ tags = [], cities = [] }) {
   return (
     <div className="space-y-14">
       {/* ── Causes ────────────────────────────────────────────────────────── */}
@@ -79,66 +78,6 @@ export default function HomeBrowseSection({ tags = [], cities = [], orgs = [], r
                 </Link>
               </li>
             ))}
-          </ul>
-        </section>
-      )}
-
-      {/* ── Organizations ─────────────────────────────────────────────────── */}
-      {orgs.length > 0 && (
-        <section aria-labelledby="browse-orgs">
-          <div id="browse-orgs">
-            <SectionHeading href="/volunteer/organizations" hrefLabel={`All ${totalOrgs}`}>
-              Organizations recruiting now
-            </SectionHeading>
-          </div>
-          <ul className="mt-4 flex flex-wrap gap-2">
-            {orgs.map(({ slug, name, count }) => (
-              <li key={slug}>
-                <Link
-                  href={`/volunteer/org/${slug}`}
-                  className="inline-flex items-center gap-1.5 rounded-full border border-line bg-white px-3.5 py-1.5 text-sm font-medium text-inkSoft hover:border-brand hover:text-brand transition-colors"
-                >
-                  {name}
-                  <span className="font-mono text-xs text-muted">{count}</span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
-
-      {/* ── Recently added ────────────────────────────────────────────────── */}
-      {recent.length > 0 && (
-        <section aria-labelledby="browse-recent">
-          <div id="browse-recent">
-            <SectionHeading>Recently added opportunities</SectionHeading>
-          </div>
-          <ul className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-x-8 divide-y divide-line md:[&>li:nth-child(2)]:border-t-0">
-            {recent.map(o => {
-              const org = cleanOrgName(o.org_name)
-              return (
-                <li key={o.id} className="py-3 first:border-t-0 border-t border-line">
-                  <a
-                    href={o.source_url}
-                    target="_blank"
-                    rel="noopener"
-                    className="font-medium text-ink hover:text-brand transition-colors"
-                  >
-                    {o.opportunity_title}
-                  </a>
-                  <div className="mt-0.5 text-sm text-muted">
-                    {o.orgSlug ? (
-                      <Link href={`/volunteer/org/${o.orgSlug}`} className="hover:text-brand">
-                        {org}
-                      </Link>
-                    ) : (
-                      org
-                    )}
-                    {o.city ? <span> · {o.city}</span> : null}
-                  </div>
-                </li>
-              )
-            })}
           </ul>
         </section>
       )}

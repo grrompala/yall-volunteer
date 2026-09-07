@@ -251,51 +251,6 @@ export function cityPageCopy(city, listings) {
   return { title, description, h1: title, intro, faq, summary: s }
 }
 
-// ── Organization pages ───────────────────────────────────────────────────────
-
-export function orgPageCopy(org) {
-  const listings = org.entries || []
-  const s = summarize(listings)
-  const refreshed = formatDate(s.newest)
-
-  const cities = s.topCities.map(c => c.city)
-  const where = cities.length ? cities.slice(0, 3).join(', ') : METRO
-  const causes = s.topTags.slice(0, 4).map(t => tagMeta(t.tag).label.toLowerCase())
-
-  const title = `Volunteer with ${org.name}${cities.length === 1 ? ` in ${cities[0]}` : ''}`
-  const description =
-    `${s.total} volunteer ${plural(s.total, 'opportunity', 'opportunities')} with ${org.name} in ${where}. ` +
-    `Current openings, causes, and where to sign up.`
-
-  const intro = [
-    `${org.name} currently has ${s.total} volunteer ${plural(s.total, 'opportunity', 'opportunities')} open ` +
-      `in ${joinList(cities.slice(0, 4)) || METRO}.`,
-    causes.length
-      ? `Their work covers ${joinList(causes)}.`
-      : '',
-    `Listings ${sourceSentence(s.sources)}${refreshed ? ` and last checked ${refreshed}` : ''}. ` +
-      `Signing up happens at the source — use the link on any listing below.`,
-  ].filter(Boolean).join(' ')
-
-  const faq = [
-    {
-      q: `How do I volunteer with ${org.name}?`,
-      a:
-        `${org.name} has ${s.total} open volunteer ${plural(s.total, 'role', 'roles')} listed. Pick the one you ` +
-        `want below and follow its link back to the original posting to register — Good Deeds Dallas indexes the ` +
-        `openings but doesn't handle signups itself.`,
-    },
-    {
-      q: `Where is ${org.name} located?`,
-      a: cities.length
-        ? `Their listed volunteer opportunities are in ${joinList(cities.slice(0, 6))}, Texas.`
-        : `Their volunteer opportunities are across the ${METRO} metroplex.`,
-    },
-  ]
-
-  return { title, description, h1: `Volunteer with ${org.name}`, intro, faq, summary: s }
-}
-
 // ── JSON-LD builders ─────────────────────────────────────────────────────────
 
 export function breadcrumbLd(trail) {

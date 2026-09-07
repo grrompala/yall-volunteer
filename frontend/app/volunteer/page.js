@@ -2,7 +2,7 @@
 // per-cause and per-city pages: real HTML with real links, no JS required.
 
 import Link from 'next/link'
-import { loadListings, tagCounts, tagSlug, cityCounts, orgCounts } from '../../lib/listings'
+import { loadListings, tagCounts, tagSlug, cityCounts } from '../../lib/listings'
 import { tagMeta } from '../../components/tagMeta'
 import { breadcrumbLd, formatDate, lastRefreshed, pageMeta, SITE_URL } from '../../lib/seo'
 import Breadcrumbs from '../../components/Breadcrumbs'
@@ -26,7 +26,6 @@ export default function VolunteerIndex() {
   const total = listings.length
   const tags = tagCounts()
   const cities = cityCounts()
-  const orgs = orgCounts()
   const refreshed = formatDate(lastRefreshed(listings))
 
   const jsonLd = [
@@ -88,29 +87,6 @@ export default function VolunteerIndex() {
               className="inline-flex items-center gap-1.5 rounded-full border border-line bg-white px-3.5 py-1.5 text-sm font-medium text-inkSoft hover:border-brand hover:text-brand transition-colors"
             >
               {city}
-              <span className="font-mono text-xs text-muted">{count}</span>
-            </Link>
-          </li>
-        ))}
-      </ul>
-
-      <h2 className="mt-10 font-bold text-xl text-ink">By organization</h2>
-      <p className="mt-3 text-base text-inkSoft leading-relaxed max-w-2xl">
-        {orgs.length} nonprofits have three or more open roles and get their own page collecting
-        everything they&apos;re recruiting for —{' '}
-        <Link href="/volunteer/organizations" className="text-brand font-semibold hover:text-brandDark">
-          browse all {orgs.length}
-        </Link>
-        .
-      </p>
-      <ul className="mt-4 flex flex-wrap gap-2">
-        {orgs.slice(0, 24).map(({ slug, name, count }) => (
-          <li key={slug}>
-            <Link
-              href={`/volunteer/org/${slug}`}
-              className="inline-flex items-center gap-1.5 rounded-full border border-line bg-white px-3.5 py-1.5 text-sm font-medium text-inkSoft hover:border-brand hover:text-brand transition-colors"
-            >
-              {name}
               <span className="font-mono text-xs text-muted">{count}</span>
             </Link>
           </li>

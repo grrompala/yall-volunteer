@@ -3,20 +3,16 @@
 // this server wrapper mounts it and supplies the page's crawlable content.
 //
 // It used to mount HomeClient with nothing at all, which meant the strongest
-// page on the domain shipped ~19 KB containing no opportunities, no
-// organizations, and links to only eight of the 45+ browse pages. Crawlers
-// don't run JavaScript, so as far as search engines and AI crawlers were
-// concerned the home page was close to empty — while the cause and city pages
-// under it were returning 250 KB+ of real content. Now the root carries an
-// <h1>, a lead paragraph, an FAQ, links to every cause / city / organization
-// page, and the 40 most recent listings, all as static HTML
-// (components/HomeBrowseSection.jsx).
+// page on the domain shipped ~19 KB and linked to only eight of the 40+ browse
+// pages. Crawlers don't run JavaScript, so as far as search engines and AI
+// crawlers were concerned the home page was close to empty — while the cause
+// and city pages under it were returning 250 KB+ of real content. The root now
+// carries an <h1>, a lead, an FAQ, and links to every cause and city page as
+// static HTML (components/HomeBrowseSection.jsx).
 
+import { loadListings, tagCounts, tagSlug, cityCounts } from '../lib/listings'
 import {
-  loadListings, tagCounts, tagSlug, cityCounts, orgCounts, orgSlugForListing, cityName,
-} from '../lib/listings'
-import {
-  summarize, formatDate, plural, itemListLd, faqLd, pageMeta, SITE_URL, SITE_NAME, METRO,
+  summarize, formatDate, plural, faqLd, pageMeta, SITE_URL, SITE_NAME, METRO,
 } from '../lib/seo'
 import { tagMeta } from '../components/tagMeta'
 import HomeClient from '../components/HomeClient'
@@ -29,21 +25,14 @@ import HomeBrowseSection from '../components/HomeBrowseSection'
 // subset instead of showing "Loading…". The crawlable content comes from
 // HomeBrowseSection below, which is static HTML either way.
 
-// Listings rendered as plain HTML in the "Recently added" block.
-const RECENT_CAP = 40
-// Organizations linked from the home page; the rest are on /volunteer/organizations.
-const HOME_ORG_CAP = 30
-
-const byRecency = (a, b) => (b.last_scraped || '').localeCompare(a.last_scraped || '')
-
 export function generateMetadata() {
   const listings = loadListings()
   const total = listings.length
   const orgs = new Set(listings.map(o => o.org_name).filter(Boolean)).size
   const description =
     `${total.toLocaleString()} volunteer opportunities across Dallas–Fort Worth from ${orgs} local ` +
-    `nonprofits, refreshed weekly and quality-checked. Browse by cause, city or organization, then sign ` +
-    `up through the original posting.`
+    `nonprofits, refreshed weekly and quality-checked. Browse by cause or city, then sign up through the ` +
+    `original posting.`
 
   return pageMeta({
     title: `${SITE_NAME} — Volunteer opportunities across DFW`,
@@ -54,12 +43,10 @@ export function generateMetadata() {
 
 export default function Home() {
   const listings = loadListings()
-  const sorted = [...listings].sort(byRecency)
   const s = summarize(listings)
 
   const tags = tagCounts().map(({ tag, count }) => ({ tag, slug: tagSlug(tag), count }))
   const cities = cityCounts()
-  const orgs = orgCounts()
 
   const heading = `Volunteer opportunities across ${METRO}`
   const refreshed = formatDate(s.newest)
@@ -125,10 +112,12 @@ export default function Home() {
   ]
 
   const jsonLd = [
-    itemListLd(`Volunteer opportunities in ${METRO}`, sorted, 50),
     faqLd(faq),
     // The browse pages, declared as a list so a crawler landing on the root can
-    // see the shape of the site without following every link first.
+    // see the shape of the site without following every link first. (An
+    // ItemList of individual opportunities used to sit here too, backing a
+    // "Recently added" block on the page; the block is gone, and structured
+    // data has to describe what a visitor actually sees.)
     {
       '@context': 'https://schema.org',
       '@type': 'ItemList',
@@ -142,15 +131,6 @@ export default function Home() {
     },
   ]
 
-  const recent = sorted.slice(0, RECENT_CAP).map(o => ({
-    id: o.id,
-    opportunity_title: o.opportunity_title,
-    org_name: o.org_name,
-    source_url: o.source_url,
-    city: cityName(o),
-    orgSlug: orgSlugForListing(o),
-  }))
-
   return (
     <>
       <script
@@ -158,13 +138,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <HomeClient heading={heading} intro={intro} faq={faq}>
-        <HomeBrowseSection
-          tags={tags}
-          cities={cities}
-          orgs={orgs.slice(0, HOME_ORG_CAP).map(({ slug, name, count }) => ({ slug, name, count }))}
-          recent={recent}
-          totalOrgs={orgs.length}
-        />
+        <HomeBrowseSection tags={tags} cities={cities} />
       </HomeClient>
     </>
   )

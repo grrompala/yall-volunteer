@@ -8,7 +8,6 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { isTexasListing } from './rag/corpus'
 import { cityName, citySlug } from './city'
-import { orgKey, summarizeOrg } from '../components/orgs'
 
 export { cityName, citySlug } // re-export for existing importers
 
@@ -23,16 +22,6 @@ const LISTING_FILES = [
 
 // Minimum listings for a city to get its own page (avoids thin pages).
 const CITY_PAGE_MIN = 8
-
-// Minimum listings for an organization to get its own page. The threshold is
-// the whole point of these pages: an org page that collects 23 SPCA of Texas
-// opportunities is an aggregation that exists nowhere else, while a page built
-// around a single scraped Idealist listing is just a worse copy of Idealist's
-// own page — exactly the thin, auto-generated content Google discounts. Orgs
-// below the line still surface everywhere else on the site; they just don't get
-// a dedicated URL. Raise this to 5 if Search Console reports a large share of
-// org pages as "Crawled – currently not indexed".
-const ORG_PAGE_MIN = 3
 
 let _cache = null
 
@@ -96,87 +85,6 @@ export function listingsByCitySlug(slug) {
     const c = cityName(o)
     return c && citySlug(c) === slug
   })
-}
-
-// ── Organizations ─────────────────────────────────────────────────────────────
-// Orgs are derived from listings by name (see components/orgs.js — orgKey() is
-// the shared identity function, so an org page groups exactly the same listings
-// the Organizations panel and OrgModal do).
-
-// Display name -> URL slug. Stricter than citySlug() because org names are the
-// messiest strings in the corpus: they carry punctuation, ampersands, trailing
-// commas, "Inc.", and symbols like the ® in "I Want To Mow Your Lawn ®".
-export function orgSlug(name) {
-  return String(name || '')
-    .normalize('NFKD')
-    .replace(/\p{Diacritic}/gu, '')   // strip accents: "Camara" from "Cámara"
-    .toLowerCase()
-    .replace(/&/g, ' and ')
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '')
-    .slice(0, 80)
-    .replace(/-+$/g, '')              // don't let the truncation leave a trailing dash
-}
-
-let _orgIndex = null
-let _orgSlugByKey = null
-
-// slug -> summarized org record, for every org at or above ORG_PAGE_MIN.
-// Built once per process (build-time), so the ~217 pages, the org index page,
-// and the sitemap all agree on the same slug set.
-function orgIndex() {
-  if (_orgIndex) return _orgIndex
-
-  const byKey = new Map()
-  for (const o of loadListings()) {
-    const key = orgKey(o.org_name)
-    if (!key) continue
-    if (!byKey.has(key)) byKey.set(key, [])
-    byKey.get(key).push(o)
-  }
-
-  const eligible = [...byKey.values()]
-    .filter(entries => entries.length >= ORG_PAGE_MIN)
-    .map(summarizeOrg)
-    .filter(org => orgSlug(org.name))   // drop anything that slugs to nothing
-    // Sort before assigning slugs so collision suffixes are stable across
-    // builds: biggest org keeps the clean slug, ties broken by name.
-    .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name))
-
-  const index = new Map()
-  for (const org of eligible) {
-    const base = orgSlug(org.name)
-    let slug = base
-    for (let n = 2; index.has(slug); n++) slug = `${base}-${n}`
-    index.set(slug, { ...org, slug })
-  }
-
-  _orgIndex = index
-  _orgSlugByKey = new Map([...index.values()].map(org => [org.key, org.slug]))
-  return _orgIndex
-}
-
-// [{ slug, name, count, causes[], cities[], ... }] — biggest org first.
-export function orgCounts() {
-  return [...orgIndex().values()]
-}
-
-export function orgBySlug(slug) {
-  return orgIndex().get(slug) || null
-}
-
-// Slug for a listing's organization, or null when that org has no page.
-// Used to link listing cards and cause/city pages into the org pages, so they
-// aren't crawlable orphans.
-export function orgSlugForListing(listing) {
-  const key = orgKey(listing?.org_name)
-  if (!key) return null
-  orgIndex()                    // ensures _orgSlugByKey is populated
-  return _orgSlugByKey.get(key) || null
-}
-
-export function listingsByOrgSlug(slug) {
-  return orgBySlug(slug)?.entries || []
 }
 
 // Slim version of a listing for embedding in a pre-rendered page's payload.
