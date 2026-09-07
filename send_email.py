@@ -31,6 +31,12 @@ from pathlib import Path
 
 ENDPOINT = "https://api.resend.com/emails"
 
+# api.resend.com sits behind Cloudflare, which blocks urllib's default
+# "Python-urllib/3.11" User-Agent outright: the request comes back 403 with
+# "error code: 1010" and never reaches Resend, so a perfectly good API key
+# looks rejected. Any ordinary User-Agent gets through.
+USER_AGENT = "good-deeds-dallas-notify/1.0 (+https://www.good-deeds-dallas.org)"
+
 # Resend's shared sender. Works with no DNS setup, but only to the account
 # owner's own address — which is exactly this use case.
 DEFAULT_FROM = "Good Deeds Dallas <onboarding@resend.dev>"
@@ -51,6 +57,14 @@ def explain(status: int, body: str) -> str:
     except (json.JSONDecodeError, AttributeError):
         pass
 
+    # Cloudflare, not Resend. Distinguish it: reporting this as a bad key sends
+    # you off rotating a credential that was never the problem.
+    if status == 403 and "1010" in detail:
+        return (
+            f"Cloudflare blocked the request to Resend before it was authenticated "
+            f"({status}: {detail}). This is a User-Agent problem, not a key problem — "
+            f"check that USER_AGENT is still being sent on the request."
+        )
     if status in (401, 403):
         return (
             f"Resend rejected the API key ({status}): {detail}. Check that the "
@@ -105,6 +119,7 @@ def main() -> None:
         headers={
             "Authorization": f"Bearer {api_key}",
             "Content-Type": "application/json",
+            "User-Agent": USER_AGENT,
         },
         method="POST",
     )
