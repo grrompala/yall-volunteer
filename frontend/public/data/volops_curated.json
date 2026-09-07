@@ -97,7 +97,10 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "food_security",
+      "community"
+    ],
     "geo": {
       "city": "Sachse",
       "state": "TX",
@@ -206,7 +209,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Sachse",
       "state": "TX",
@@ -359,7 +364,9 @@
       "model": "expiry-rule",
       "checked_at": "2026-07-17T01:07:41.466287+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "one_time",
       "ends_on": "2023-10-27",
@@ -691,7 +698,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Grand Prairie",
       "state": "TX",
@@ -961,7 +970,10 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "animals",
+      "community"
+    ],
     "geo": {
       "city": "Grand Prairie",
       "state": "TX",
@@ -1062,7 +1074,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Arlington",
       "state": "TX",
@@ -1205,7 +1219,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Arlington",
       "state": "TX",
@@ -1361,7 +1377,11 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "arts",
+      "education",
+      "community"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -1697,7 +1717,10 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-03T13:18:39.584325+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "health",
+      "community"
+    ],
     "geo": {
       "city": "Irving",
       "state": "TX",
@@ -1750,7 +1773,10 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-03T13:18:39.584325+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "health",
+      "community"
+    ],
     "geo": {
       "city": "Irving",
       "state": "TX",
@@ -1802,7 +1828,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-03T13:18:39.584325+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Irving",
       "state": "TX",
@@ -1911,7 +1939,10 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-03T13:18:39.584325+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "health",
+      "community"
+    ],
     "geo": {
       "city": "Irving",
       "state": "TX",
@@ -1963,7 +1994,10 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-03T13:18:39.584325+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "health",
+      "community"
+    ],
     "geo": {
       "city": "Irving",
       "state": "TX",
@@ -2016,7 +2050,10 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-03T13:18:39.584325+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "health",
+      "community"
+    ],
     "geo": {
       "city": "Irving",
       "state": "TX",
@@ -2125,7 +2162,10 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "animals",
+      "community"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -2286,7 +2326,10 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "animals",
+      "community"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -2447,7 +2490,10 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "animals",
+      "community"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -2554,7 +2600,10 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "animals",
+      "community"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -2878,7 +2927,10 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "animals",
+      "community"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -2972,7 +3024,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Weatherford",
       "state": "TX",
@@ -3018,7 +3072,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Irving",
       "state": "TX",
@@ -3064,7 +3120,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Fort Worth",
       "state": "TX",
@@ -3160,7 +3218,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Heath",
       "state": "TX",
@@ -3206,7 +3266,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -3258,7 +3320,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Mansfield",
       "state": "TX",
@@ -3304,7 +3368,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "environment",
+      "community"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -3404,7 +3471,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -3621,7 +3690,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -3729,7 +3800,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -3886,7 +3959,9 @@
       "model": "expiry-rule",
       "checked_at": "2026-07-17T01:07:41.466287+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "one_time",
       "ends_on": "2023-10-14",
@@ -3936,7 +4011,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -3986,7 +4063,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -4150,7 +4229,9 @@
       "model": "expiry-rule",
       "checked_at": "2026-07-17T01:07:41.466287+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "one_time",
       "ends_on": "2023-04-11",
@@ -4202,7 +4283,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -4252,7 +4335,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "education",
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -4311,7 +4397,10 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "environment",
+      "community"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -4590,7 +4679,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -4636,7 +4727,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "The Colony",
       "state": "TX",
@@ -4682,7 +4775,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -4728,7 +4823,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -4781,7 +4878,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-07-21T04:20:57.870535+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -5345,7 +5444,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-07-21T04:20:57.870535+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -5398,7 +5499,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-07-21T04:20:57.870535+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -5723,7 +5826,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -5775,7 +5880,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "health",
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -5882,7 +5990,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -5935,7 +6045,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "animals",
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -6043,7 +6156,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "animals",
+      "community"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -6144,7 +6260,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community",
+      "animals"
+    ],
     "geo": {
       "city": "Irving",
       "state": "TX",
@@ -6191,7 +6310,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "animals",
+      "community"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -6734,7 +6856,11 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "children",
+      "education",
+      "community"
+    ],
     "geo": {
       "city": null,
       "state": "TX",
@@ -6835,7 +6961,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -7171,7 +7299,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "mental_health",
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -7337,7 +7468,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -7445,7 +7578,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -7497,7 +7632,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Plano",
       "state": "TX",
@@ -7600,7 +7737,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "environment",
+      "community"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -7652,7 +7792,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "environment",
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -7871,7 +8014,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Plano",
       "state": "TX",
@@ -7917,7 +8062,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -8138,7 +8285,10 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-03T13:18:39.584325+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community",
+      "education"
+    ],
     "geo": {
       "city": "Frisco",
       "state": "TX",
@@ -8191,7 +8341,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-03T13:18:39.584325+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Frisco",
       "state": "TX",
@@ -8244,7 +8396,10 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-03T13:18:39.584325+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "seniors",
+      "community"
+    ],
     "geo": {
       "city": "Frisco",
       "state": "TX",
@@ -8296,7 +8451,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-03T13:18:39.584325+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Frisco",
       "state": "TX",
@@ -8349,7 +8506,10 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-03T13:18:39.584325+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "children",
+      "community"
+    ],
     "geo": {
       "city": "Frisco",
       "state": "TX",
@@ -8401,7 +8561,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-03T13:18:39.584325+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Frisco",
       "state": "TX",
@@ -8453,7 +8615,10 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-03T13:18:39.584325+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "education",
+      "community"
+    ],
     "geo": {
       "city": "Frisco",
       "state": "TX",
@@ -8561,7 +8726,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-15T22:54:42.242044+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Mesquite",
       "state": "TX",
@@ -8946,7 +9113,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-07-21T03:59:17.050665+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": null,
       "state": "TX",
@@ -8998,7 +9167,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-07-21T03:59:17.050665+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -9051,7 +9222,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-07-21T03:59:17.050665+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -9151,7 +9324,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "animals",
+      "community"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -9258,7 +9434,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community",
+      "animals"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -9361,7 +9540,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community",
+      "arts"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -9413,7 +9595,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community",
+      "arts"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -9754,7 +9939,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Irving",
       "state": "TX",
@@ -9807,7 +9994,10 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "education",
+      "community"
+    ],
     "geo": {
       "city": "Irving",
       "state": "TX",
@@ -9916,7 +10106,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Irving",
       "state": "TX",
@@ -9968,7 +10160,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Irving",
       "state": "TX",
@@ -10020,7 +10214,10 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "arts",
+      "community"
+    ],
     "geo": {
       "city": "Irving",
       "state": "TX",
@@ -10341,7 +10538,9 @@
     ],
     "apply_url": null,
     "apply_instructions": "Attend one of the scheduled information sessions.",
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "qc": {
       "status": "rejected",
       "category": "vague_no_role",
@@ -10395,7 +10594,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -10441,7 +10642,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -10541,7 +10744,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -10591,7 +10796,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -10641,7 +10848,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -10691,7 +10900,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -10741,7 +10952,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -10791,7 +11004,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -10841,7 +11056,9 @@
       "model": "expiry-rule",
       "checked_at": "2026-07-17T01:07:41.466287+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "one_time",
       "ends_on": "2025-03-01",
@@ -10891,7 +11108,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -10941,7 +11160,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "arts",
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -10991,7 +11213,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -11041,7 +11265,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -11091,7 +11317,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": null,
       "state": "TX",
@@ -11191,7 +11419,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "animals",
+      "community"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -11354,7 +11585,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "animals"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -11462,7 +11695,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community",
+      "animals"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -11626,7 +11862,11 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "animals",
+      "education",
+      "community"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -11787,7 +12027,10 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community",
+      "animals"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -11837,7 +12080,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -12159,7 +12404,10 @@
       "model": "expiry-rule",
       "checked_at": "2026-07-17T01:07:41.466287+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "animals",
+      "community"
+    ],
     "expiry": {
       "kind": "one_time",
       "ends_on": "2023-12-31",
@@ -12218,7 +12466,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-15T22:54:42.242044+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -12752,7 +13002,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "McKinney",
       "state": "TX",
@@ -12849,7 +13101,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community",
+      "mental_health"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -12895,7 +13150,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "mental_health",
+      "community"
+    ],
     "geo": {
       "city": null,
       "state": "TX",
@@ -12941,7 +13199,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "mental_health",
+      "community"
+    ],
     "geo": {
       "city": null,
       "state": "TX",
@@ -13204,7 +13465,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Sachse",
       "state": "TX",
@@ -13256,7 +13519,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Sachse",
       "state": "TX",
@@ -13365,7 +13630,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Sachse",
       "state": "TX",
@@ -13417,7 +13684,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Sachse",
       "state": "TX",
@@ -13512,7 +13781,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Bonham",
       "state": "TX",
@@ -14294,7 +14565,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Fort Worth",
       "state": "TX",
@@ -14937,7 +15210,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -15101,7 +15376,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -15429,7 +15706,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "housing",
+      "community"
+    ],
     "geo": {
       "city": null,
       "state": "TX",
@@ -15527,7 +15807,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "environment",
+      "community"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -15579,7 +15862,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -15625,7 +15910,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -15671,7 +15958,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -15718,7 +16007,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "environment",
+      "community"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -15770,7 +16062,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community",
+      "environment"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -15829,7 +16124,10 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community",
+      "environment"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -15881,7 +16179,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -16091,7 +16391,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "animals",
+      "community"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -16362,7 +16665,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "animals",
+      "community"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -16471,7 +16777,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -16630,7 +16938,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -16682,7 +16992,9 @@
       "model": "expiry-rule",
       "checked_at": "2026-07-17T01:07:41.466287+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "one_time",
       "ends_on": "2024-01-31",
@@ -16789,7 +17101,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "education",
+      "community"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -16842,7 +17157,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -16949,7 +17266,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -17280,7 +17599,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -17332,7 +17653,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -17447,7 +17770,10 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-03T13:18:39.584325+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "food_security",
+      "community"
+    ],
     "geo": {
       "city": "Frisco",
       "state": "TX",
@@ -17556,7 +17882,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-03T13:18:39.584325+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Frisco",
       "state": "TX",
@@ -18119,7 +18447,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -18227,7 +18557,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "food_security",
+      "community"
+    ],
     "geo": {
       "city": "Sherman",
       "state": "TX",
@@ -18273,7 +18606,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -18325,7 +18660,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -18371,7 +18708,10 @@
     ],
     "apply_url": null,
     "apply_instructions": "Sign up for available opportunities through Civic Champs.",
-    "unified_tags": [],
+    "unified_tags": [
+      "housing",
+      "community"
+    ],
     "qc": {
       "status": "passed",
       "category": null,
@@ -18424,7 +18764,9 @@
     ],
     "apply_url": null,
     "apply_instructions": "Contact Volunteer Coordinator for group volunteer inquiries.",
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "qc": {
       "status": "passed",
       "category": null,
@@ -18477,7 +18819,9 @@
     ],
     "apply_url": null,
     "apply_instructions": "Reach out to the Volunteer Coordinator for questions or inspiration.",
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "qc": {
       "status": "passed",
       "category": null,
@@ -18638,7 +18982,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Plano",
       "state": "TX",
@@ -18738,7 +19084,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "mental_health",
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -18790,7 +19139,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Lewisville",
       "state": "TX",
@@ -18892,7 +19243,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -18944,7 +19297,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": null,
       "state": "TX",
@@ -18990,7 +19345,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -19042,7 +19399,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Lewisville",
       "state": "TX",
@@ -19088,7 +19447,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -19197,7 +19558,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -19249,7 +19612,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -19460,7 +19825,9 @@
     ],
     "apply_url": null,
     "apply_instructions": "Complete the volunteer application and steps.",
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "qc": {
       "status": "passed",
       "category": null,
@@ -19512,7 +19879,9 @@
     ],
     "apply_url": "mailto:myrle@heritagefarmstead.org",
     "apply_instructions": "Send your name, email and phone number to Myrle Bongiovanni, Volunteer Coordinator.",
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "qc": {
       "status": "passed",
       "category": null,
@@ -19564,7 +19933,9 @@
     ],
     "apply_url": null,
     "apply_instructions": "Complete the volunteer application and steps.",
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "qc": {
       "status": "passed",
       "category": null,
@@ -19624,7 +19995,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Carrollton",
       "state": "TX",
@@ -19671,7 +20044,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -19724,7 +20099,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -19777,7 +20154,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -19830,7 +20209,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -19882,7 +20263,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Princeton",
       "state": "TX",
@@ -19928,7 +20311,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "mental_health",
+      "community"
+    ],
     "geo": {
       "city": null,
       "state": "TX",
@@ -20031,7 +20417,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Plano",
       "state": "TX",
@@ -20078,7 +20466,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -20131,7 +20521,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -20184,7 +20576,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -20348,7 +20742,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -20400,7 +20796,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -20549,7 +20947,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -20595,7 +20995,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -20696,7 +21098,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -20971,7 +21375,10 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-07-21T03:59:17.050665+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "education",
+      "community"
+    ],
     "geo": {
       "city": null,
       "state": "TX",
@@ -21085,7 +21492,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": []
+    "unified_tags": [
+      "community"
+    ]
   },
   {
     "id": "international_rescue_committee_dallas_0",
@@ -21296,7 +21705,10 @@
       "model": "expiry-rule",
       "checked_at": "2026-08-15T22:54:46.930172+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community",
+      "arts"
+    ],
     "geo": {
       "city": "Irving",
       "state": "TX",
@@ -21404,7 +21816,10 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-15T22:54:42.242044+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "arts",
+      "community"
+    ],
     "geo": {
       "city": "Irving",
       "state": "TX",
@@ -21507,7 +21922,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -21559,7 +21976,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -21611,7 +22030,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -21720,7 +22141,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "environment",
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -21774,7 +22198,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": null,
       "state": null,
@@ -21821,7 +22247,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "animals",
+      "community"
+    ],
     "geo": {
       "city": null,
       "state": null,
@@ -22029,7 +22458,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -22081,7 +22512,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -22133,7 +22566,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -22236,7 +22671,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "environment",
+      "community"
+    ],
     "geo": {
       "city": "Garland",
       "state": "TX",
@@ -22388,7 +22826,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "environment",
+      "community"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -22711,7 +23152,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "environment",
+      "community"
+    ],
     "geo": {
       "city": "Rowlett",
       "state": "TX",
@@ -22757,7 +23201,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "environment",
+      "community"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -22809,7 +23256,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Rowlett",
       "state": "TX",
@@ -22855,7 +23304,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Rowlett",
       "state": "TX",
@@ -22956,7 +23407,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "environment",
+      "community"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -23126,7 +23580,9 @@
       "model": "expiry-rule",
       "checked_at": "2026-08-15T22:54:46.930172+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Irving",
       "state": "TX",
@@ -23178,7 +23634,9 @@
       "model": "expiry-rule",
       "checked_at": "2026-08-15T22:54:46.930172+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Irving",
       "state": "TX",
@@ -23230,7 +23688,9 @@
       "model": "expiry-rule",
       "checked_at": "2026-08-15T22:54:46.930172+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Irving",
       "state": "TX",
@@ -23450,7 +23910,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-03T13:18:39.584325+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Rowlett",
       "state": "TX",
@@ -23496,7 +23958,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -23548,7 +24012,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "environment",
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -23712,7 +24179,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -23923,7 +24392,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -23975,7 +24446,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -24081,7 +24554,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "McKinney",
       "state": "TX",
@@ -24133,7 +24608,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-15T22:54:42.242044+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -24298,7 +24775,10 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-15T22:54:42.242044+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "health",
+      "community"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -24350,7 +24830,11 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-15T22:54:42.242044+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "health",
+      "education",
+      "community"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -24403,7 +24887,10 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-15T22:54:42.242044+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "health",
+      "community"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -24455,7 +24942,10 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-15T22:54:42.242044+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "health",
+      "community"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -24676,7 +25166,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-03T13:18:39.584325+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Carrollton",
       "state": "TX",
@@ -25048,7 +25540,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Arlington",
       "state": "TX",
@@ -25094,7 +25588,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "health",
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -25144,7 +25641,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Arlington",
       "state": "TX",
@@ -25188,7 +25687,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Arlington",
       "state": "TX",
@@ -25286,7 +25787,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Arlington",
       "state": "TX",
@@ -25330,7 +25833,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Arlington",
       "state": "TX",
@@ -25374,7 +25879,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Arlington",
       "state": "TX",
@@ -25426,7 +25933,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -25534,7 +26043,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -25639,7 +26150,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community",
+      "education"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -26231,7 +26745,9 @@
     ],
     "apply_url": null,
     "apply_instructions": "Contact the Volunteer Program Manager at volunteer@thenetwork.org.",
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "qc": {
       "status": "passed",
       "category": null,
@@ -26512,7 +27028,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -26676,7 +27194,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -26898,7 +27418,9 @@
       "model": "expiry-rule",
       "checked_at": "2026-07-25T20:56:46.565342+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": "2023-08-08",
@@ -27233,7 +27755,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community",
+      "food_security"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -27292,7 +27817,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -27398,7 +27925,10 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-07-21T03:59:17.050665+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community",
+      "animals"
+    ],
     "geo": {
       "city": "Carrollton",
       "state": "TX",
@@ -27558,7 +28088,10 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-07-21T03:59:17.050665+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community",
+      "animals"
+    ],
     "geo": {
       "city": "Carrollton",
       "state": "TX",
@@ -27878,7 +28411,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Denton",
       "state": "TX",
@@ -27924,7 +28459,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -28032,7 +28569,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "mental_health",
+      "community"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -28085,7 +28625,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Rockwall",
       "state": "TX",
@@ -28244,7 +28786,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -28296,7 +28840,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -28459,7 +29005,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "environment",
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -28511,7 +29060,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "environment",
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -28619,7 +29171,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "environment",
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -28671,7 +29226,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "environment",
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -28724,7 +29282,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "environment",
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -28782,7 +29343,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -28992,7 +29555,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Richardson",
       "state": "TX",
@@ -29039,7 +29604,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Richardson",
       "state": "TX",
@@ -29350,7 +29917,10 @@
     ],
     "apply_url": null,
     "apply_instructions": "Contact us to express interest in marketing volunteer opportunities.",
-    "unified_tags": [],
+    "unified_tags": [
+      "animals",
+      "community"
+    ],
     "qc": {
       "status": "passed",
       "category": null,
@@ -29634,7 +30204,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -29742,7 +30314,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -29850,7 +30424,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -29902,7 +30478,9 @@
       "model": "expiry-rule",
       "checked_at": "2026-07-17T01:07:41.466287+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "one_time",
       "ends_on": "2026-05-09",
@@ -30015,7 +30593,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Sachse",
       "state": "TX",
@@ -30067,7 +30647,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Sachse",
       "state": "TX",
@@ -30231,7 +30813,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Sachse",
       "state": "TX",
@@ -30283,7 +30867,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Sachse",
       "state": "TX",
@@ -30335,7 +30921,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Sachse",
       "state": "TX",
@@ -30388,7 +30976,10 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "education",
+      "community"
+    ],
     "geo": {
       "city": "Sachse",
       "state": "TX",
@@ -30441,7 +31032,10 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "education",
+      "community"
+    ],
     "geo": {
       "city": "Sachse",
       "state": "TX",
@@ -30551,7 +31145,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Sachse",
       "state": "TX",
@@ -30603,7 +31199,10 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "education",
+      "community"
+    ],
     "geo": {
       "city": "Sachse",
       "state": "TX",
@@ -30655,7 +31254,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Sachse",
       "state": "TX",
@@ -30816,7 +31417,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "environment",
+      "community"
+    ],
     "geo": {
       "city": "Van Alstyne",
       "state": "TX",
@@ -31128,7 +31732,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -31180,7 +31786,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -31232,7 +31840,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Terrell",
       "state": "TX",
@@ -31278,7 +31888,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "environment",
+      "community"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -31378,7 +31991,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "education",
+      "community"
+    ],
     "geo": {
       "city": "Forney",
       "state": "TX",
@@ -31424,7 +32040,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Forney",
       "state": "TX",
@@ -31642,7 +32260,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -31855,7 +32475,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -31962,7 +32584,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Kaufman",
       "state": "TX",
@@ -32009,7 +32633,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community",
+      "animals"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -32062,7 +32689,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "animals",
+      "community"
+    ],
     "geo": {
       "city": "Kaufman",
       "state": "TX",
@@ -32114,7 +32744,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Plano",
       "state": "TX",
@@ -32166,7 +32798,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Plano",
       "state": "TX",
@@ -32218,7 +32852,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Plano",
       "state": "TX",
@@ -32270,7 +32906,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -32773,7 +33411,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -32923,7 +33563,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "McKinney",
       "state": "TX",
@@ -33025,7 +33667,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "education",
+      "community"
+    ],
     "geo": {
       "city": null,
       "state": "TX",
@@ -33685,7 +34330,10 @@
       "model": "expiry-rule",
       "checked_at": "2026-07-17T01:07:41.466287+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "environment",
+      "community"
+    ],
     "expiry": {
       "kind": "one_time",
       "ends_on": "2026-06-06",
@@ -33738,7 +34386,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "environment",
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -33906,7 +34557,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -33958,7 +34611,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -34010,7 +34665,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -34062,7 +34719,10 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "animals",
+      "community"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -34114,7 +34774,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -34166,7 +34828,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -34218,7 +34882,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -34270,7 +34936,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -34366,7 +35034,9 @@
     ],
     "apply_url": null,
     "apply_instructions": "Contact us for more information on volunteering.",
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Carrollton",
       "state": "TX",
@@ -34693,7 +35363,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Irving",
       "state": "TX",
@@ -34737,7 +35409,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -35002,7 +35676,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -35110,7 +35786,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "McKinney",
       "state": "TX",
@@ -35206,7 +35884,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "McKinney",
       "state": "TX",
@@ -35253,7 +35933,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "McKinney",
       "state": "TX",
@@ -35299,7 +35981,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "McKinney",
       "state": "TX",
@@ -36215,7 +36899,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -36268,7 +36954,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -36532,7 +37220,9 @@
     ],
     "apply_url": null,
     "apply_instructions": "Reach out to us for details on joining a service group.",
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "qc": {
       "status": "rejected",
       "category": "donation_or_fundraising",
@@ -36730,7 +37420,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -36782,7 +37474,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -36998,7 +37692,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": null,
       "state": "TX",
@@ -37045,7 +37741,9 @@
       "model": "expiry-rule",
       "checked_at": "2026-07-17T01:07:41.466287+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "one_time",
       "ends_on": "2026-07-11",
@@ -37308,7 +38006,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -37361,7 +38061,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -37475,7 +38177,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-09T02:32:42.248450+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -38065,7 +38769,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -38118,7 +38824,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community",
+      "mental_health"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -38331,7 +39040,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -38384,7 +39095,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "health",
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -38547,7 +39261,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-15T22:54:42.242044+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Euless",
       "state": "TX",
@@ -38598,9 +39314,11 @@
       "category": "manual_override",
       "reason": "manual override",
       "model": "override",
-      "checked_at": "2026-09-07T12:23:56.911331+00:00"
+      "checked_at": "2026-09-07T15:44:35.615622+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Euless",
       "state": "TX",
@@ -38651,9 +39369,11 @@
       "category": "manual_override",
       "reason": "manual override",
       "model": "override",
-      "checked_at": "2026-09-07T12:23:56.911331+00:00"
+      "checked_at": "2026-09-07T15:44:35.615622+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Euless",
       "state": "TX",
@@ -38705,7 +39425,9 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-15T22:54:42.242044+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Euless",
       "state": "TX",
@@ -38758,7 +39480,10 @@
       "model": "gpt-4o-mini",
       "checked_at": "2026-08-15T22:54:42.242044+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "education",
+      "community"
+    ],
     "geo": {
       "city": "Euless",
       "state": "TX",
@@ -38804,7 +39529,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -38911,7 +39638,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -38963,7 +39692,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "animals",
+      "community"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -39071,7 +39803,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Weatherford",
       "state": "TX",
@@ -39172,7 +39906,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "animals",
+      "community"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -39225,7 +39962,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "unknown",
       "ends_on": null,
@@ -39333,7 +40072,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -39380,7 +40121,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -39490,7 +40233,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -39655,7 +40400,9 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "ongoing",
       "ends_on": null,
@@ -39707,7 +40454,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community",
+      "environment"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -39753,7 +40503,10 @@
       "model": "gpt-4o",
       "checked_at": "2026-06-08T03:13:37.319340+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "environment",
+      "community"
+    ],
     "geo": {
       "city": "Dallas",
       "state": "TX",
@@ -39855,7 +40608,9 @@
       "model": "expiry-rule",
       "checked_at": "2026-07-17T01:07:41.466287+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "one_time",
       "ends_on": "2026-04-25",
@@ -39907,7 +40662,9 @@
       "model": "expiry-rule",
       "checked_at": "2026-07-17T01:07:41.466287+00:00"
     },
-    "unified_tags": [],
+    "unified_tags": [
+      "community"
+    ],
     "expiry": {
       "kind": "one_time",
       "ends_on": "2026-04-25",

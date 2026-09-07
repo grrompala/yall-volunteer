@@ -308,7 +308,7 @@
     "org_name": "Valor Hospice",
     "opportunity_title": "Arlington Patient Care",
     "category": "duplicate",
-    "reason": "duplicate of idealist_17d36df6f93f4b89b3a9de02f64830cd — same org/title/description, no distinguishing schedule",
+    "reason": "duplicate of idealist_903884e90f5643dfb18adfd56248cb11 — same org/title/description, no distinguishing schedule",
     "source_url": "https://www.idealist.org/en/volunteer-opportunity/76c0ff50bfe745d095857914965b96a7-arlington-patient-care-valor-hospice-arlington"
   },
   {
@@ -326,6 +326,14 @@
     "category": "duplicate",
     "reason": "duplicate of idealist_17d36df6f93f4b89b3a9de02f64830cd — same org/title/description, no distinguishing schedule",
     "source_url": "https://www.idealist.org/en/volunteer-opportunity/be57d6925e6c49439109b4d676db63b6-arlington-patient-care-valor-hospice-arlington"
+  },
+  {
+    "id": "idealist_6b85bf50447a447b87f80a689861d1dd",
+    "org_name": "Valor Hospice",
+    "opportunity_title": "Arlington Patient Care",
+    "category": "duplicate",
+    "reason": "duplicate of idealist_903884e90f5643dfb18adfd56248cb11 — same org/title/description, no distinguishing schedule",
+    "source_url": "https://www.idealist.org/en/volunteer-opportunity/6b85bf50447a447b87f80a689861d1dd-arlington-patient-care-valor-hospice-arlington"
   },
   {
     "id": "idealist_fed648700a814d8f8fd8b01fb525048d",
@@ -1310,6 +1318,14 @@
     "category": "expired",
     "reason": "event date passed (2026-04-25)",
     "source_url": "https://www.idealist.org/en/volunteer-opportunity/44344ef55c004b39a2bcdb9fec6c4155-event-photographer-videographer-dallas-tx-national-rebuilding-day-april-25-2026-rebuilding-together-north-texas-dallas"
+  },
+  {
+    "id": "idealist_0a9b2669e74c45caa7a7f4f0b68b90e8",
+    "org_name": "Apartment Life",
+    "opportunity_title": "Events and Ministry Coordinator (Multiple Locations & Flexible Opportunities)",
+    "category": "duplicate",
+    "reason": "duplicate of idealist_399f346133b64d418aec2472c9827c8a — same org/title/description, no distinguishing schedule",
+    "source_url": "https://www.idealist.org/en/volunteer-opportunity/0a9b2669e74c45caa7a7f4f0b68b90e8-events-and-ministry-coordinator-multiple-locations-flexible-opportunities-apartment-life-dallas"
   },
   {
     "id": "idealist_8b74e0eefbdd4502926c7ae1bcf22ba6",
@@ -2712,22 +2728,6 @@
     "source_url": "https://www.idealist.org/en/volunteer-opportunity/bd4b8db976f347268a32b771f57f337c-patient-care-volunteers-needed-in-the-cedar-hill-area-75104-divinity-healthcare-cedar-hill"
   },
   {
-    "id": "idealist_0c78460ab533435aa769e6d0c6059bb5",
-    "org_name": "Divinity Healthcare",
-    "opportunity_title": "Patient Care Volunteers Needed in the Dallas Area (75241, 75243, 75209)",
-    "category": "duplicate",
-    "reason": "duplicate of idealist_c1cb2a5322f94d56b248f5a76bdf9d23 — same org/title/description, no distinguishing schedule",
-    "source_url": "https://www.idealist.org/en/volunteer-opportunity/0c78460ab533435aa769e6d0c6059bb5-patient-care-volunteers-needed-in-the-dallas-area-75241-75243-75209-divinity-healthcare-dallas"
-  },
-  {
-    "id": "idealist_8a23dd19320d4c1c82d7b59f32434f11",
-    "org_name": "Divinity Healthcare",
-    "opportunity_title": "Patient Care Volunteers Needed in the Duncanville Area (75116 and 75137)",
-    "category": "duplicate",
-    "reason": "duplicate of idealist_57f55431d50e40e4ae2eaf7b59ce025f — same org/title/description, no distinguishing schedule",
-    "source_url": "https://www.idealist.org/en/volunteer-opportunity/8a23dd19320d4c1c82d7b59f32434f11-patient-care-volunteers-needed-in-the-duncanville-area-75116-and-75137-divinity-healthcare-duncanville"
-  },
-  {
     "id": "idealist_13eb62ec408d406991915b805a091ffe",
     "org_name": "Enhabit Home Health  & Hospice DFW metroplex",
     "opportunity_title": "Patient Companionship Volunteers and Caregiver Relief Volunteers",
@@ -3136,6 +3136,14 @@
     "source_url": "https://www.idealist.org/en/volunteer-opportunity/89ca479a76164c899a1b09177df2cc7c-susan-g-komen-community-outreach-volunteer-susan-g-komen-dallas"
   },
   {
+    "id": "idealist_310daedfeb3143f7ba74b710f8ba890a",
+    "org_name": "Ganga Library, Nobel & Prize Winners Library!",
+    "opportunity_title": "TX Garland Court Order Community Service ANYDAY of week. Nobel & Prize Winners Library",
+    "category": "duplicate",
+    "reason": "duplicate of idealist_2a23b455f07749faa09232e7fc375f6c — same org/title/description, no distinguishing schedule",
+    "source_url": "https://www.idealist.org/en/volunteer-opportunity/310daedfeb3143f7ba74b710f8ba890a-tx-garland-court-order-community-service-anyday-of-week-nobel-prize-winners-library-ganga-library-nobel-prize-winners-library-garland"
+  },
+  {
     "id": "idealist_92fb859988ba41caa132f97a428d1d97",
     "org_name": "GRACE WOMENS ORGANIZATION",
     "opportunity_title": "Take pictures at the Grace Women's Wellness Fair",
@@ -3488,6 +3496,14 @@
     "source_url": "https://www.idealist.org/en/volunteer-opportunity/5060640b28034e17bbb5d29c83ced8fb-volunteer-executive-personal-assistant-to-founderceo-grandparents-community-network-inc-frisco"
   },
   {
+    "id": "idealist_0c78460ab533435aa769e6d0c6059bb5",
+    "org_name": "Divinity Healthcare",
+    "opportunity_title": "Volunteer Needed for Patient Companionship in the Dallas Area (75232) on Weekends",
+    "category": "duplicate",
+    "reason": "duplicate of idealist_c1cb2a5322f94d56b248f5a76bdf9d23 — same org/title/description, no distinguishing schedule",
+    "source_url": "https://www.idealist.org/en/volunteer-opportunity/0c78460ab533435aa769e6d0c6059bb5-volunteer-needed-for-patient-companionship-in-the-dallas-area-75232-on-weekends-divinity-healthcare-dallas"
+  },
+  {
     "id": "idealist_0782f389881c410b953ad618ab20cd8c",
     "org_name": "A MOMENT OF MAGIC",
     "opportunity_title": "Volunteer Opportunity: Express, Create, Heal (ECH) Program Facilitator – Dallas/Fort Worth",
@@ -3552,6 +3568,22 @@
     "source_url": "https://www.idealist.org/en/volunteer-opportunity/d498da5898cb4ad59b7e60ea6bb19d9d-volunteer-at-the-local-assisted-living-facility-heart-to-heart-hospice-serving-mansfield-arlington-midlothian-burleson-crowley-cleburne-granbury-texas-and-surrounding-areas-mansfield"
   },
   {
+    "id": "idealist_e54ab3e74e6f49918d35f85915a7e48e",
+    "org_name": "FURRY FRIENDS ANIMAL RESCUE",
+    "opportunity_title": "Volunteer for FFAR Cat Program - Cage cleaner/snuggler",
+    "category": "expired",
+    "reason": "event date passed (2026-09-02)",
+    "source_url": "https://www.idealist.org/en/volunteer-opportunity/e54ab3e74e6f49918d35f85915a7e48e-volunteer-for-ffar-cat-program-cage-cleanersnuggler-furry-friends-animal-rescue-mckinney"
+  },
+  {
+    "id": "idealist_0a351011c5494f608dd889e1b40abcf0",
+    "org_name": "FURRY FRIENDS ANIMAL RESCUE",
+    "opportunity_title": "Volunteer for FFAR Cat Program - Cat Supply Coordinator",
+    "category": "expired",
+    "reason": "event date passed (2026-09-02)",
+    "source_url": "https://www.idealist.org/en/volunteer-opportunity/0a351011c5494f608dd889e1b40abcf0-volunteer-for-ffar-cat-program-cat-supply-coordinator-furry-friends-animal-rescue-mckinney"
+  },
+  {
     "id": "idealist_37b2b9af048b41a9a003a7019a86f667",
     "org_name": "Ambedkarite Buddhist Association of Texas",
     "opportunity_title": "Volunteer for Grand opening Ceremony of First Mahabodhi International Center branch",
@@ -3614,6 +3646,14 @@
     "category": "duplicate",
     "reason": "duplicate of idealist_d2279f8bed7a4341a9846a52c54f5552 — same org/title/description, no distinguishing schedule",
     "source_url": "https://www.idealist.org/en/volunteer-opportunity/f1668327640945fdb942d7916566f9b7-volunteers-needed-for-field-day-mi-escuelita-preschool-garland"
+  },
+  {
+    "id": "idealist_8a23dd19320d4c1c82d7b59f32434f11",
+    "org_name": "Divinity Healthcare",
+    "opportunity_title": "Volunteers Needed for Patient Companionship in the Duncanville Area (75115)",
+    "category": "duplicate",
+    "reason": "duplicate of idealist_57f55431d50e40e4ae2eaf7b59ce025f — same org/title/description, no distinguishing schedule",
+    "source_url": "https://www.idealist.org/en/volunteer-opportunity/8a23dd19320d4c1c82d7b59f32434f11-volunteers-needed-for-patient-companionship-in-the-duncanville-area-75115-divinity-healthcare-duncanville"
   },
   {
     "id": "idealist_93ae9ee291cf493b8224c91209b3a322",
