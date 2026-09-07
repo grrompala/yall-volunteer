@@ -33,7 +33,12 @@ on:
   schedule:
     # 12:30 UTC daily (~7:30am Dallas). Off-the-hour to dodge cron congestion.
     - cron: '30 12 * * *'
-  workflow_dispatch: {}   # manual trigger from the Actions tab
+  workflow_dispatch:
+    inputs:
+      force_email:
+        description: 'Send the digest even if there is nothing new (use to test delivery)'
+        type: boolean
+        default: false
 
 permissions:
   contents: write   # commit the refreshed reddit_raw.json snapshot
@@ -96,12 +101,21 @@ jobs:
             git push
           fi
 
-      # Nothing to say on a quiet, healthy day — no mail is sent at all.
+      # Nothing to say on a quiet, healthy day — no mail is sent at all, which
+      # makes a manual run a poor way to check the configuration: most days
+      # there is genuinely nothing new and a correct run looks identical to a
+      # broken one. force_email sends the digest regardless, so a test proves
+      # delivery rather than proving Reddit was quiet.
       # send_email.py names the exact misconfiguration when Resend rejects a
       # send, because a message that never arrives is otherwise indistinguishable
       # from a quiet day.
       - name: Email the digest
-        if: always() && (steps.digest.outputs.has_new == 'true' || steps.digest.outputs.scrape_ok == 'false')
+        if: >-
+          always() && (
+            steps.digest.outputs.has_new == 'true' ||
+            steps.digest.outputs.scrape_ok == 'false' ||
+            github.event.inputs.force_email == 'true'
+          )
         env:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           MAIL_TO: ${{ secrets.MAIL_TO }}
